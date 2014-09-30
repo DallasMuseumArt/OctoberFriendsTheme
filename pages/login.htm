@@ -4,11 +4,13 @@ layout = "login"
 
 [Modal WhatsThisModal]
 linkTitle = "<div class='q icon-help-circled'></div><span>What is this?</span>"
+linkClasses = "help small pop"
 title = "What is DMA Friends?"
 partial = "whatisthis"
 
 [Modal LoginModal]
 linkTitle = "Log in"
+linkClasses = "button alternate login pop"
 title = "Login"
 partial = "login"
 ==
@@ -16,11 +18,9 @@ partial = "login"
     <div class="login-box">
         <div class="dma-logo">
             {% component 'WhatsThisModal' %}
-            <a href="#" class="help small pop" data-control="popup" data-handler="onWhatIsIt"><div class="q icon-help-circled"></div><span>What is this?</span></a>
         </div>
         <div class="info">
             {% component 'LoginModal' %}
-            <a class="button alternate login pop" href="#card-scan">Log In</a>
             <a class="button alternate alignright sign-up pop" href="#do-registration">Sign Up</a>
         </div>
     </div>
