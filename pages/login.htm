@@ -13,6 +13,12 @@ linkTitle = "Log in"
 linkClasses = "button alternate login pop"
 title = "Login"
 partial = "login"
+
+[Modal SignupModal]
+linkTitle = "Sign Up"
+linkClasses = "button alternate sign-up"
+title = "Sign Up"
+partial = "signup"
 ==
 <div class="info-box">
     <div class="login-box">
@@ -21,7 +27,7 @@ partial = "login"
         </div>
         <div class="info">
             {% component 'LoginModal' %}
-            <a class="button alternate alignright sign-up pop" href="#do-registration">Sign Up</a>
+            {% component 'SignupModal' %}
         </div>
     </div>
 
