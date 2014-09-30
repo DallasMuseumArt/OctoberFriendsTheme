@@ -1,19 +1,25 @@
 title = "Login to Friends"
 url = "/"
-layout = "default"
+layout = "login"
 
-[Modal]
+[Modal WhatsThisModal]
+linkTitle = "<div class='q icon-help-circled'></div><span>What is this?</span>"
 title = "What is DMA Friends?"
-linkTitle = "<div class=q icon-help-circled></div><span>What is this?</span>"
 partial = "whatisthis"
+
+[Modal LoginModal]
+linkTitle = "Log in"
+title = "Login"
+partial = "login"
 ==
 <div class="info-box">
     <div class="login-box">
         <div class="dma-logo">
-            {% component 'Modal' %}
+            {% component 'WhatsThisModal' %}
             <a href="#" class="help small pop" data-control="popup" data-handler="onWhatIsIt"><div class="q icon-help-circled"></div><span>What is this?</span></a>
         </div>
         <div class="info">
+            {% component 'LoginModal' %}
             <a class="button alternate login pop" href="#card-scan">Log In</a>
             <a class="button alternate alignright sign-up pop" href="#do-registration">Sign Up</a>
         </div>

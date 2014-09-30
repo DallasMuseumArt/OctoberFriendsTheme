@@ -91,12 +91,6 @@ body.login {
     background: #2b2623 url('../images/DMA-BG.png') top left repeat;
 }
 
-#layout-content {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 #layout-content .info-box {
     margin: 20% auto 0 auto;
     width: 50%;

@@ -1,9 +1,25 @@
 description = "Default layout"
 ==
+<?php
+function onStart()
+{
+    $this['user'] = Auth::getUser();
+}
+?>
+==
 {% partial "header" %}
 
 <!-- Content -->
-<section id="layout-content">
+<section id="layout-content" class="container">
+    <div class="page-nav">
+        <ul>
+            <li><a href="/friends">Home</a></li>
+            <li><a href="/badges">My Badges</a></li>
+            <li><a href="/rewards">Get Rewards</a></li>
+            <li><a href="/profile">My Profile</a></li>
+        </ul>
+    </div>
+
     {% page %}
 </section>
 

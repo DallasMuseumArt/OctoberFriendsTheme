@@ -7,7 +7,8 @@
         <link rel="icon" type="image/png" href="{{ 'assets/images/logo.png'|theme }}" />
         {% styles %}
         <link href="{{ [
-            'assets/css/theme.css'
+            'assets/css/theme.css',
+            'assets/vendor/bootstrap/css/bootstrap.css'
         ]|theme }}" rel="stylesheet">
     </head>
     <body class="{{ this.page.baseFileName }}">
@@ -16,16 +17,18 @@
     <header id="layout-header">
 
         <!-- Nav -->
-        <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav id="layout-nav" class="navbar navbar-inverse" role="navigation">
             <div class="container">
                 <div class="collapse navbar-collapse navbar-main-collapse">
-<!--
-                        <ul class="nav navbar-nav">
-                            <li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Basic concepts</a></li>
-                            <li class="{% if this.page.id == 'ajax' %}active{% endif %}"><a href="{{ 'ajax'|page }}">AJAX framework</a></li>
-                            <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Plugin components</a></li>
-                        </ul>
--->
+
+                    <ul class="nav navbar-nav">
+                        <li><img class="user-avatar" src="{{ user.avatar }}"></li>
+                        <li><h4 class="user-name">Hello, {{ user.metadata.first_name }}</h4></li>
+                        <li><span class="points">{{ user.metadata.points }} Points</span></li>
+                        <li><a class="activity-feed icon-list" href="/activity-stream">Activity Stream</a></li>
+                        <li><a class="user-logout icon-cancel" href="/logout">Log Out</a></li>
+                    </ul>
+
                 </div>
             </div>
         </nav>
