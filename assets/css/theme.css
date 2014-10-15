@@ -79,9 +79,6 @@ input[type="checkbox"] {
     background: transparent url(images/assets.svg) -166px -490px no-repeat; }
     input[type="checkbox"].toggle:checked {
       background-position: 0px -490px; }
-input:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
-  padding: 35px 35px 25px;
-  height: 120px; }
 input[type="password"] {
   font-size: 60px;
   line-height: 1em;
@@ -121,4 +118,52 @@ body.login {
 .bg-red, .button.alternate, button.alternate {
     background-color: #ec1c2e;
     color: #fff;
+}
+
+/**
+ * Activity Code Form
+ */
+.dma-code-input {
+    background: #febe10;
+    padding: 25px;
+}
+.dma-code-input #activity-code {
+    width: 80%;
+    border: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+.dma-code-input .activity-submit:before {
+content: '';
+position: absolute;
+left: 14px;
+top: 25px;
+display: block;
+width: 42px;
+height: 62px;
+background: transparent url(images/assets.svg) 0 -590px no-repeat;
+}
+.dma-code-input .help.small:not(h1) {
+height: auto;
+padding: 25px 25px 25px inherit;
+background: #fee1ac;
+width: 600px;
+margin-left: -25px;
+margin-bottom: -25px;
+}
+
+/**
+ * Primary links
+ */
+.primary-links .item {
+    height: 150px;
+    text-align: center;
+}
+.primary-links .item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #8d7c75;
+    color: #fff;
+    border: 1px solid #636466;
 }
