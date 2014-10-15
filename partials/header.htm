@@ -16,6 +16,7 @@
     <!-- Header -->
     <header id="layout-header">
 
+        {% if user %}
         <!-- Nav -->
         <nav id="layout-nav" class="navbar navbar-inverse" role="navigation">
             <div class="container">
@@ -26,11 +27,12 @@
                         <li><h4 class="user-name">Hello, {{ user.metadata.first_name }}</h4></li>
                         <li><span class="points">{{ user.metadata.points }} Points</span></li>
                         <li><a class="activity-feed icon-list" href="/activity-stream">Activity Stream</a></li>
-                        <li><a class="user-logout icon-cancel" href="/logout">Log Out</a></li>
+                        <li><a class="user-logout icon-cancel" data-request="onLogout" data-request-data="redirect: '/'">Sign out</a></li>
                     </ul>
 
                 </div>
             </div>
         </nav>
+        {% endif %}
 
     </header>
