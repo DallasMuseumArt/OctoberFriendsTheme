@@ -62,31 +62,6 @@ fieldset {
 blockquote:disabled, input:disabled, select:disabled, textarea:disabled, button:disabled, .button:disabled {
   cursor: default; }
 
-input[type="checkbox"] {
-  display: inline-block;
-  width: 51px;
-  height: 55px;
-  border: none;
-  background: transparent url(images/assets.svg) -65px -245px no-repeat;
-  vertical-align: bottom; }
-  input[type="checkbox"]:checked {
-    background-position: 0px -245px; }
-  input[type="checkbox"].toggle {
-    width: 156px;
-    height: 66px;
-    margin: 0 10px 0 0;
-    vertical-align: middle;
-    background: transparent url(images/assets.svg) -166px -490px no-repeat; }
-    input[type="checkbox"].toggle:checked {
-      background-position: 0px -490px; }
-input:not([type="submit"]):not([type="file"]):not([type="checkbox"]):not([type="radio"]) {
-  padding: 35px 35px 25px;
-  height: 120px; }
-input[type="password"] {
-  font-size: 60px;
-  line-height: 1em;
-  letter-spacing: -2px; }
-
 body.login {
     background: #2b2623 url('../images/DMA-BG.png') top left repeat;
 }

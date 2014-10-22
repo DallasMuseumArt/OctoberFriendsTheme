@@ -1,6 +1,7 @@
 title = "Login to Friends"
 url = "/"
 layout = "login"
+hidden = "0"
 
 [Modal WhatsThisModal]
 linkTitle = "<div class='q icon-help-circled'></div><span>What is this?</span>"
@@ -19,19 +20,25 @@ linkTitle = "Sign Up"
 linkClasses = "button alternate sign-up"
 title = "Sign Up"
 partial = "signup"
+
+[account]
+redirect = "friends"
+paramCode = "code"
 ==
 <div class="info-box">
-    <div class="login-box">
-        <div class="dma-logo">
-            {% component 'WhatsThisModal' %}
-        </div>
-        <div class="info">
-            {% component 'LoginModal' %}
-            {% component 'SignupModal' %}
-        </div>
-    </div>
+<div class="login-box">
+<div class="dma-logo">{% component 'WhatsThisModal' %}</div>
 
-    <div class="location-info footer">
-        <h4 class="location-title icon-location">Art Cart</h4><p>This is the "No Print" option</p>
+<div class="info">
+    {% component 'account' %}
+    {% component 'LoginModal' %} {% component 'SignupModal' %}
+        
     </div>
+</div>
+
+<div class="location-info footer">
+<h4>Art Cart</h4>
+
+<p>This is the "No Print" option</p>
+</div>
 </div>
