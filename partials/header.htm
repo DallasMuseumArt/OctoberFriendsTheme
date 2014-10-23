@@ -1,3 +1,4 @@
+==
 <!DOCTYPE html>
 <html>
     <head>
@@ -26,9 +27,9 @@
                     <ul class="nav navbar-nav">
                         <li><img class="user-avatar" src="{{ user.avatar }}"></li>
                         <li><h4 class="user-name">Hello, {{ user.metadata.first_name }}</h4></li>
-                        <li><span class="points">{{ user.metadata.points }} Points</span></li>
+                        <li><span class="points">{{ user.points }} Points</span></li>
                         <li><a class="activity-feed icon-list" href="/activity-stream">Activity Stream</a></li>
-                        <li><a class="user-logout icon-cancel" data-request="onLogout" data-request-data="redirect: '/'">Sign out</a></li>
+                        <li><a class="user-logout icon-cancel" href="/logout">Sign out</a></li>
                     </ul>
 
                 </div>
