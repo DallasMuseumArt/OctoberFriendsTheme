@@ -146,6 +146,18 @@ margin-bottom: -25px;
     border: 1px solid #636466;
 }
 
+#layout-nav {
+    color: #fff;
+}
+
+.nav .points {
+    margin: 10px;
+    display: block;
+}
+
+/**
+ * Flash Messages
+ */
 #flashMessages {
     position: absolute;
     right: 1%;
