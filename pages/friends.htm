@@ -2,19 +2,21 @@ title = "DMA Friends"
 url = "/friends"
 layout = "default"
 description = "Welcome to DMA Friends"
+hidden = "0"
 
 [BadgeRecommend]
 limit = "10"
 
 [ActivityCodeForm]
+
+
+[UserMostRecentBadge]
 ==
 <div class="row">
-    <div class="col-md-4">
-        {% component 'ActivityCodeForm' %}
-    </div>
-    <div class="col-md-6">
-        TODO: most recent badge
-    </div>
+<div class="col-md-7">{% component 'ActivityCodeForm' %}</div>
+
+<div class="col-md-5">{% component 'UserMostRecentBadge' %}</div>
 </div>
 
-{% component 'BadgeRecommend' %}
+<h3>Things to Do</h3>
+<p>{% component 'BadgeRecommend' %}</p>
