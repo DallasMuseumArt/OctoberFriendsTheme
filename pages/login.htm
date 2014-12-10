@@ -25,6 +25,14 @@ partial = "signup"
 redirect = "friends"
 paramCode = "code"
 ==
+<?php
+function onSignin()
+{
+    \DMA\Friends\Wordpress\Auth::verifyFromEmail(post('email'), post('password'));
+    return $this->account->onSignIn();
+}
+?>
+==
 <div class="info-box">
 <div class="login-box">
 <div class="dma-logo">{% component 'WhatsThisModal' %}</div>
