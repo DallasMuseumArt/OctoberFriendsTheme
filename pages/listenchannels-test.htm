@@ -1,0 +1,35 @@
+title = "listenChannels-test"
+url = "/listenchannels-test"
+hidden = "0"
+==
+<?php
+function onStart(){
+    \Postman::listen([['dummy', 'sms'], 'regex' => '/(\d.*)\.(\d.*)/', 'contains' => ['DMA', 'caseInsensitive' => true ]], function($message){
+         	var_dump($message);
+         	var_dump($message->getMatches());
+    });
+    
+    // 
+    
+    \Postman::listen(['dummy', 'startswith' => 'DMA', 'equals' => ' DMA    345345.34543  ', 'endswith' => '34543' ], function($message){
+         	var_dump($message);
+         	var_dump($message->getMatches());
+    });    
+ 
+    \Postman::listen('twitter', function($message){
+         	var_dump($message);
+         //var_dump($message->getMatches());
+    });    
+
+    \Postman::listen('dummy', function($message){
+         	var_dump($message);
+         //var_dump($message->getMatches());
+    });     
+ 
+    \Postman::readChannels();   
+    
+    //\Postman::listen();
+    //\Postman::send();
+}
+?>
+==
