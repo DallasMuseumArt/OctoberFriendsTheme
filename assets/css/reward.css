@@ -1,0 +1,22 @@
+.friends-reward.preview {
+    padding: 10px;
+    background: #ebeae6;
+    color: #8d7c75;
+    margin-bottom: 20px;
+    min-height: 150px;
+}
+
+.friends-reward button {
+    background-color: #00a4b0;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+}
+
+.friends-reward .description {
+    float: left;
+}
+
+.friends-reward .claim {
+    float: right;
+}
