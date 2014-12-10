@@ -185,7 +185,7 @@ margin-bottom: -25px;
  * Ajax indicator
  */
 .stripe-loading-indicator {
-  height: 4px;
+  height: 10px;
   background: transparent;
   position: fixed;
   top: 0;
@@ -196,9 +196,9 @@ margin-bottom: -25px;
 }
 .stripe-loading-indicator .stripe,
 .stripe-loading-indicator .stripe-loaded {
-  height: 4px;
+  height: 10px;
   display: block;
-  background: #0090c0;
+  background: #ec1c2e;
   position: absolute;
   -webkit-box-shadow: inset 0 1px 1px -1px #FFF, inset 0 -1px 1px -1px #FFF;
   box-shadow: inset 0 1px 1px -1px #FFF, inset 0 -1px 1px -1px #FFF;
