@@ -1,0 +1,24 @@
+title = "Group"
+url = "/group"
+layout = "default"
+description = "User group creation"
+hidden = "0"
+
+[GroupFormCreation]
+maxUserSuggestions = "10"
+noUserRedirectTo = "account"
+==
+<div class="container">
+	<div class="row">
+
+		<div class="col-md-3">
+			<p>Ut auctor tincidunt neque, vitae commodo diam feugiat sed. Nullam fringilla urna sit amet imperdiet auctor. Fusce sed auctor turpis.</p>
+			<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi diam nulla, faucibus vel lacinia non, tincidunt nec enim.</p>
+		</div>
+	
+		<div class="col-md-8">
+			<h4>Create a group</h4>
+			{% component 'GroupFormCreation' %}
+		</div>
+	</div>
+</div>

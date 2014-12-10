@@ -1,0 +1,27 @@
+title = "Activity-test"
+url = "/activity-test"
+hidden = "0"
+==
+<?php
+use DMA\Friends\Activities\LikeWorkOfArt;
+use RainLab\User\Models\User;
+
+function onStart(){
+    $user = User::find(1);
+    
+    //var_dump($user);
+    
+    LikeWorkOfArt::process($user, ['code' => ' 1979. 22 ']);
+    
+    $ret = LikeWorkOfArt::isAssessionNumber(' 1979. 22 ');
+    if (!$ret){
+        var_dump('not valid');
+    }else{
+        return $ret;
+    }
+    
+    
+    //ActivityManager::process('LikeWorkOfArt', []);
+}
+?>
+==
