@@ -116,10 +116,12 @@ body.login {
     padding: 25px;
 }
 .dma-code-input #activity-code {
-    width: 80%;
-    border: none;
-    padding-left: 0;
-    padding-right: 0;
+  width: 80%;
+  border: none;
+  padding-left: 10px;
+  padding-right: 0;
+  font-size: 2em;
+  height: 60px;
 }
 .dma-code-input .activity-submit:before {
 content: '';
