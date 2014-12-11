@@ -26,6 +26,12 @@ redirect = "friends"
 paramCode = "code"
 ==
 <?php
+function onStart()
+{
+    if (Auth::getUser()) {
+        return Redirect::to('friends');
+    }
+}
 function onSignin()
 {
     \DMA\Friends\Wordpress\Auth::verifyFromEmail(post('email'), post('password'));
