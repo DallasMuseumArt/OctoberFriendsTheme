@@ -2,6 +2,9 @@ title = "Recomendation-test"
 url = "/recomendation-test"
 layout = "default"
 hidden = "0"
+
+[Recommendations]
+recomend = "Activity, Badge"
 ==
 <?php
 use RainLab\User\Models\User;
@@ -9,14 +12,14 @@ use DMA\Friends\Models\Activity;
 use DMA\Friends\Models\Badge;
 
 function onStart(){
-    $user = User::find(1);
-    $activity = Activity::find(1);
-    $badge = Badge::find(1);
-    \Event::fire('dma.friends.activity.completed', [$user, $activity, $badge]);
+    //$user = User::find(1);
+    //$activity = Activity::find(1);
+    //$badge = Badge::find(1);
+    //\Event::fire('dma.friends.activity.completed', [$user, $activity, $badge]);
 
-    $recommendations = \Recommendation::suggest($user, ['badge', 'activity']);    
+    //$recommendations = \Recommendation::suggest($user, ['badge', 'activity']);    
     
-    echo(json_encode($recommendations));
+    //echo(json_encode($recommendations));
     //var_dump($recomendations);
 
     // $recomendations = \Recomendation::suggest($user, 'activity');
@@ -25,3 +28,4 @@ function onStart(){
 }
 ?>
 ==
+{% component 'Recommendations' %}
