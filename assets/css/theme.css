@@ -76,6 +76,47 @@ body.login {
     background: #2b2623 url('../images/DMA-BG.png') top left repeat;
 }
 
+.the-icons li [class^="icon-"], .the-icons li [class*=" icon-"] {
+  width: 32px;
+  font-size: 16px;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: normal;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  margin-top: 0;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-home:before {
+  content: "\f015";
+}
+
+.icon-circle-o:before {
+  content: "\f10c";
+}
+
+.icon-trophy:before {
+  content: "\f091";
+}
+
+.icon-user:before {
+  content: "\f007";
+}
+
 #layout-content .info-box {
     margin: 20% auto 0 auto;
     width: 50%;
@@ -124,14 +165,14 @@ body.login {
   height: 60px;
 }
 .dma-code-input .activity-submit:before {
-content: '';
-position: absolute;
-left: 14px;
-top: 25px;
-display: block;
-width: 42px;
-height: 62px;
-background: transparent url(images/assets.svg) 0 -590px no-repeat;
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 25px;
+  display: block;
+  width: 42px;
+  height: 62px;
+  background: transparent url(images/assets.svg) 0 -590px no-repeat;
 }
 .dma-code-input .help.small:not(h1) {
 height: auto;
@@ -142,7 +183,7 @@ margin-left: -25px;
 margin-bottom: -25px;
 }
 
-/**
+/***********************************************************************
  * Primary links
  */
 .primary-links {
@@ -152,14 +193,39 @@ margin-bottom: -25px;
 .primary-links .item {
     height: 150px;
     text-align: center;
+    background: #8d7c75;
+}
+
+.primary-links .item a:before {
+  font-size: 6em;
+  display: block;
+  padding-top: 25px;
 }
 .primary-links .item a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: #8d7c75;
-    color: #fff;
-    border: 1px solid #636466;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #8d7c75;
+  color: #fff;
+  border: 1px solid #636466;
+  text-decoration: none;
+}
+
+.primary-links .item a:hover {
+  color: #CCC;
+}
+
+.main-menu .menu-item.active span:before, .main-menu .menu-item.active span:after {
+content: '';
+position: absolute;
+z-index: 1000;
+bottom: -1px;
+left: 50%;
+margin-left: -27px;
+border-bottom: 17px solid #fff;
+border-left: 27px solid transparent;
+border-right: 27px solid transparent;
+border-top: 0;
 }
 
 #layout-nav {
@@ -445,4 +511,6 @@ margin-bottom: -25px;
   min-width: 120px;
   color: #8d7c75;
 }
+
+
 
