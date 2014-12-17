@@ -28,10 +28,12 @@
                         <li><img class="user-avatar" src="{{ user.avatar }}"></li>
                         <li><h4 class="user-name">Hello, {{ user.metadata.first_name }}</h4></li>
                         <li><span class="points">{{ user.points }} Points</span></li>
-                        <li><a class="activity-feed icon-list" href="/activity-stream">Activity Stream</a></li>
-                        <li><a class="notifications-feed icon-list" href="/notifications">Notifications</a></li>
-                        <li><a class="group-feed icon-list" href="/group">Groups</a></li>
-                        <li><a class="user-logout icon-cancel" href="/logout">Sign out</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav right">
+                        <li><a class="nav-item activity-feed icon-list" href="/activity-stream">Activity Stream</a></li>
+                        <li><a class="nav-item notifications-feed icon-envelope" href="/notifications">Notifications</a></li>
+                        <li><a class="nav-item group-feed icon-users" href="/group">Groups</a></li>
+                        <li><a class="nav-item user-logout icon-sign-out" href="/logout">Sign out</a></li>
                     </ul>
 
                 </div>

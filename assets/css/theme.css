@@ -101,22 +101,6 @@ body.login {
   -webkit-font-smoothing: antialiased;
 }
 
-.icon-home:before {
-  content: "\f015";
-}
-
-.icon-circle-o:before {
-  content: "\f10c";
-}
-
-.icon-trophy:before {
-  content: "\f091";
-}
-
-.icon-user:before {
-  content: "\f007";
-}
-
 #layout-content .info-box {
     margin: 20% auto 0 auto;
     width: 50%;
@@ -193,7 +177,6 @@ margin-bottom: -25px;
 .primary-links .item {
     height: 150px;
     text-align: center;
-    background: #8d7c75;
 }
 
 .primary-links .item a:before {
@@ -209,6 +192,10 @@ margin-bottom: -25px;
   color: #fff;
   border: 1px solid #636466;
   text-decoration: none;
+}
+
+.nav-item:before {
+  margin-right: 5px;
 }
 
 .primary-links .item a:hover {
@@ -236,6 +223,10 @@ border-top: 0;
 .nav .points {
     margin: 10px;
     display: block;
+}
+
+.nav.right {
+  float: right;
 }
 
 /**
