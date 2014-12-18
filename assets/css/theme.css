@@ -225,6 +225,10 @@ border-top: 0;
     display: block;
 }
 
+.nav.left {
+  margin-top: 5px;
+}
+
 .nav.right {
   float: right;
 }

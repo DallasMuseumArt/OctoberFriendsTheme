@@ -11,6 +11,7 @@
             'assets/css/theme.css',
             'assets/css/badge.css',
             'assets/css/reward.css',
+            '../../modules/backend/assets/css/october.css',
             'assets/vendor/bootstrap/css/bootstrap.css'
         ]|theme }}" rel="stylesheet">
     </head>
@@ -24,7 +25,7 @@
             <div class="container">
                 <div class="collapse navbar-collapse navbar-main-collapse">
 
-                    <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav left">
                         <li><img class="user-avatar" src="{{ user.avatar }}"></li>
                         <li><h4 class="user-name">Hello, {{ user.metadata.first_name }}</h4></li>
                         <li><span class="points">{{ user.points }} Points</span></li>
