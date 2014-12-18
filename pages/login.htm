@@ -9,24 +9,10 @@ linkClasses = "help small pop"
 title = "What is DMA Friends?"
 partial = "whatisthis"
 
-[Modal LoginModal]
-linkTitle = "Log in"
-linkClasses = "button alternate login pop"
-title = "Login"
-partial = "login"
-
-[Modal SignupModal]
-linkTitle = "Sign Up"
-linkClasses = "button alternate sign-up"
-title = "Sign Up"
-partial = "signup"
-
-[account]
+[UserLogin]
 redirect = "friends"
-paramCode = "code"
 ==
 <?php
-
 use DMA\Friends\Classes\LocationManager;
 
 function onStart()
@@ -37,25 +23,16 @@ function onStart()
 
     $this['location'] = LocationManager::getLocation();
 }
-function onSignin()
-{
-    \DMA\Friends\Wordpress\Auth::verifyFromEmail(post('email'), post('password'));
-    return $this->account->onSignIn();
-}
 ?>
 ==
 <div class="info-box">
-    <div class="login-box">
-        <div class="dma-logo">{% component 'WhatsThisModal' %}</div>
+<div class="login-box">
+<div class="dma-logo">{% component &#39;WhatsThisModal&#39; %}</div>
 
-        <div class="info">
-            {% component 'account' %}
-            {% component 'LoginModal' %} {% component 'SignupModal' %} 
-        </div>
-    </div>
+<div class="info">{% component &#39;UserLogin&#39; %}</div>
+</div>
 
-    <div class="location-info footer">
-        <h4>{{ location.title }}</h4>
-
-    </div>
+<div class="location-info footer">
+<h4>{{ location.title }}</h4>
+</div>
 </div>
