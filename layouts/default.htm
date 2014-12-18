@@ -3,7 +3,11 @@ description = "Default layout"
 <?php
 function onStart()
 {
-    $this['user'] = Auth::getUser();
+    if (!$user = Auth::getUser()) {
+        return Redirect::to('/');
+    }
+    
+    $this['user'] = $user;
 }
 ?>
 ==
