@@ -1,0 +1,20 @@
+<div id="card-scan" class="popup close ltd">
+    <p>Log in with your DMA Friends card! Use the guide on the screen to help you line up your membership card to the camera.</p>
+</div>
+
+<form id="login" method="POST">
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" name="email" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" class="form-control"/>
+    </div>
+
+    <button type="submit" data-dismiss="popup" class="btn btn-danger">Cancel</button>
+    <button type="submit" data-request="onUserLogin" class="btn btn-primary">Login</button>
+
+</form>
+
+<a class="help pop manual-login" href="#">I don't have my card.</a>
