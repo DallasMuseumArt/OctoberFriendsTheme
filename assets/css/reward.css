@@ -24,3 +24,14 @@
 .reward-buttons {
     margin-bottom: 20px;
 }
+
+.rewards-menu {
+    margin: 20px 0;
+}
+
+.rewards-menu ul,
+.rewards-menu ul li {
+    display: inline;
+    list-style: none;
+    padding: 0;
+}
