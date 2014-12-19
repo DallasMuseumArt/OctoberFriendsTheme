@@ -64,6 +64,7 @@ input[type="button"], input[type="submit"], button, select, .button, .button:hov
   border-radius: 6px;
   padding: 20px 20px 18px;
   text-align: center;
+  border: none;
 }
 
 fieldset {
