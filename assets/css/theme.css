@@ -112,6 +112,9 @@ body.login {
     font-size: 2em;
 }
 
+/* hide the iframe for iPad bar code scanner */
+.modal iframe { display: none;}
+
 .bg-red, .button.alternate, button.alternate {
     background-color: #ec1c2e;
     color: #fff;
