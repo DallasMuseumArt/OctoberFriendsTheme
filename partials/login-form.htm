@@ -27,6 +27,7 @@
     $('.manual-login').click(function(e) {
         $('#login').show();
         $(this).hide();
+        $('#card-scan.popup').height('auto');
         $('<iframe>').attr('src', 'dma://hidescanner').appendTo(document.documentElement).remove();
     });
 })(jQuery);

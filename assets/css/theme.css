@@ -283,5 +283,8 @@ border-top: 0;
   color: #8d7c75;
 }
 
-
-
+/**** Modal Dialog ****/
+.modal-header {
+  background-color: #ec1c2e;
+  color: #fff;
+}
