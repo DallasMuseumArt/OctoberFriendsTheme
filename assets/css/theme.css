@@ -287,4 +287,23 @@ border-top: 0;
 .modal-header {
   background-color: #ec1c2e;
   color: #fff;
+  border-radius: 6px 6px 0 0;
+}
+.modal-title {
+  color: #fff;
+}
+
+/**** Carousel ****/
+.carousel-inner > .item {
+  padding: 0 10%;
+  margin: auto;
+}
+
+.carousel-control {
+  background-image: none !important;
+  width: 10%;
+}
+
+.glyphicon {
+  color: #8d7c75;
 }

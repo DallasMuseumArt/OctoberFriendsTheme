@@ -1,0 +1,202 @@
+<form id="register" method="POST" data-request="onRegisterSubmit">
+    <div id="carousel-register" class="registration-carousel carousel slide" data-ride="carousel">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide 1 -->
+        <div class="item active">
+            <h3>Basic Info</h3>
+
+            <div class="form-group is-required">
+                <label>First Name</label>
+                <input type="text" id="first-name" name="first_name" class="form-control"/>
+            </div>
+            <div class="form-group is-required">
+                <label>Last Name</label>
+                <input type="text" id="last-name" name="last_name" class="form-control"/>
+            </div>
+
+            <div class="row">
+                <div class="form-group is-required col-md-6 col-sm-6">
+                    <label>Date of Birth</label>
+                    <div id="DatePicker-birthdate" 
+                        class="field-datepicker" 
+                        data-control="datepicker" 
+                        data-min-date="1900-01-01" 
+                        data-max-date="2020-12-31"
+                    >
+                        <input type="text" id="birth-date" name="birth_date" class="form-control" autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-group col-md-6 col-sm-6">
+                    <label>Gender</label>
+                    <select id="gender" name="gender" class="form-control">
+                        <option value="">Choose not to disclose</option>
+                    <?php foreach ($options['gender'] as $option) { ?>
+                        <option><?= $option ?></option>
+                    <?php } ?>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="item">
+            <h3>Account information</h3>
+            <div class="form-group is-required">
+                <label>Username</label>
+                <input type="text" id="name" name="name" class="form-control"/>
+            </div>
+            <div class="form-group is-required">
+                <label>Email</label>
+                <input type="text" id="email" name="email" class="form-control"/>
+            </div>
+
+            <div class="row">
+                <div class="form-group is-required col-md-6 col-sm-6">
+                    <label>Password</label>
+                    <input id="password" type="password" name="password" class="form-control"/>
+                </div>
+                    <div class="form-group is-required col-md-6 col-sm-6">
+                    <label>Password Confirm</label>
+                    <input id="password-confirmation" type="password" name="password_confirmation" class="form-control"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="item">
+            <h3>Contact Info</h3>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="text" name="phone" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>Street Address</label>
+                <input type="text" name="street_addr" class="form-control"/>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6 col-sm-6">
+                    <label>City</label>
+                    <input type="text" name="city" class="form-control"/>
+                </div>
+                <div class="form-group col-md-3 col-sm-3">
+                    <label>State</label>
+                    <select name="state" class="form-control">
+                    <?php foreach($options['states'] as $id => $state) { ?>
+                        <option value="<?= $id ?>" 
+                            <?php if (\DMA\Friends\Models\Settings::get('default_state') == $id) echo 'selected="selected"'; ?>
+                        ><?= $state ?></option>
+                    <?php } ?>
+                    </select>
+                </div>
+                    <div class="form-group col-md-3 col-sm-3">
+                    <label>Zip</label>
+                    <input type="text" name="zip" class="form-control"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="item">
+            <h3>Demographic Info</h3>
+
+            <div class="row">
+                <div class="form-group col-md-6 col-sm-6">
+                    <label>Race</label>
+                    <select name="race" class="form-control">
+                        <option value=""> - Select One - </option>
+                    <?php foreach ($options['race'] as $option) { ?>
+                        <option><?= $option ?></option>
+                    <?php } ?>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 col-sm-6">
+                    <label>Education</label>
+                    <select name="education" class="form-control">
+                        <option value=""> - Select One - </option>
+                    <?php foreach ($options['education'] as $option) { ?>
+                        <option><?= $option ?></option>
+                    <?php } ?>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group col-md-6 col-sm-6">
+                    <label>Household Income</label>
+                    <select name="household_income" class="form-control">
+                        <option value=""> - Select One - </option>
+
+                    <?php foreach ($options['household_income'] as $option) { ?>
+                        <option><?= $option ?></option>
+                    <?php } ?>
+                    </select>
+                </div>
+                <div class="form-group col-md-6 col-sm-6">
+                    <label>Number of people in your household</label>
+                    <select name="household_size" class="form-control">
+                        <option value=""> - Select One - </option>
+
+                    <?php for ($i = 1; $i < 10; $i++) { ?>
+                        <option><?= $i?></option>
+                    <?php } ?>
+                        <option>10+</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="item">
+            <h3>Social Media</h3>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-register" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-register" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <button type="submit" data-request="onRegisterSubmit" data-hotkey="ctrl+enter, cmd+enter, enter" class="register btn btn-danger disabled">Register</button>
+</form>
+
+
+<script type="text/javascript">
+(function($) {
+
+    $('input, select').change(function() {
+
+        var requiredFieldsComplete = false;
+
+        $('div.is-required').each(function(i) {
+            var inputValue = $(this).find('input, select').val();
+            if (!inputValue) {
+                requiredFieldsComplete = false
+                return false;
+            }
+
+            requiredFieldsComplete = true;
+            
+        });
+
+        if (requiredFieldsComplete) {
+            $('button.register').removeClass('disabled');
+        } else {
+            $('button.register').addClass('disabled');
+        }
+    });
+
+    $('#carousel-register').carousel({
+        interval: false,
+        wrap: false
+    });
+})(jQuery);
+</script>
