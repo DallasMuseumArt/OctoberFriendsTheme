@@ -53,11 +53,11 @@
 
             <div class="row">
                 <div class="form-group is-required col-md-6 col-sm-6">
-                    <label>Password</label>
+                    <label class="control-label" for="password">Password</label>
                     <input id="password" type="password" name="password" class="form-control"/>
                 </div>
                     <div class="form-group is-required col-md-6 col-sm-6">
-                    <label>Password Confirm</label>
+                    <label class="control-label" for="password-confirmation">Password Confirm</label>
                     <input id="password-confirmation" type="password" name="password_confirmation" class="form-control"/>
                 </div>
             </div>
@@ -190,6 +190,45 @@
         if (requiredFieldsComplete) {
             $('button.register').removeClass('disabled');
         } else {
+            $('button.register').addClass('disabled');
+        }
+
+        var spanError = '<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>';
+        var spanSuccess = '<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>';
+        var passwordAlert = '<div class="password-alert alert alert-danger" role="alert">Passwords must to match</div>';
+
+        // check that passwords match
+        if (
+            $('#password').val() != $('#password-confirmation').val()
+            && $('#password-confirmation').val()
+            && $('#password').val()
+        ) {
+            $('.form-control-feedback').remove();
+            $('div.password-alert').remove();
+
+            $('#password').parent('.form-group').addClass('has-error');
+            $('#password-confirmation').parent('.form-group').addClass('has-error');
+            $('#password').after(spanError);
+            $('#password-confirmation').after(spanError);
+
+            $('button.register').addClass('disabled');
+
+            $('#password').parents('.row').after(passwordAlert);
+
+        } else if ($('#password').val() == $('#password-confirmation').val()) {
+            $('input[type="password"]').parent('.form-group').removeClass('has-error');
+            $('.form-control-feedback').remove();
+            $('div.password-alert').remove();
+
+            $('input[type="password"]').parent('.form-group').addClass('has-success');
+            $('#password').after(spanSuccess);
+            $('#password-confirmation').after(spanSuccess);
+        } else {
+            $('input[type="password"]').parent('.form-group').removeClass('has-error');
+            $('input[type="password"]').parent('.form-group').removeClass('has-success');
+            $('.form-control-feedback').remove();
+            $('div.password-alert').remove();
+
             $('button.register').addClass('disabled');
         }
     });
