@@ -44,7 +44,7 @@
             <h3>Account information</h3>
             <div class="form-group is-required">
                 <label>Username</label>
-                <input type="text" id="name" name="name" class="form-control"/>
+                <input type="text" id="name" name="username" class="form-control"/>
             </div>
             <div class="form-group is-required">
                 <label>Email</label>
@@ -172,7 +172,7 @@
 <script type="text/javascript">
 (function($) {
 
-    $('input, select').change(function() {
+    $('input, select').on('keyup', function() {
 
         var requiredFieldsComplete = false;
 
@@ -215,7 +215,11 @@
 
             $('#password').parents('.row').after(passwordAlert);
 
-        } else if ($('#password').val() == $('#password-confirmation').val()) {
+        } else if (
+            $('#password').val() == $('#password-confirmation').val()
+            && $('#password-confirmation').val()
+            && $('#password').val()
+        ) {
             $('input[type="password"]').parent('.form-group').removeClass('has-error');
             $('.form-control-feedback').remove();
             $('div.password-alert').remove();
