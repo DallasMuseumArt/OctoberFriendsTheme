@@ -87,6 +87,10 @@ body.login {
     width: 50%;
 }
 
+h4.user-name {
+  margin-top: 10px;
+  text-transform: capitalize;
+}
 .login {
   margin: 40px 0;
 }
