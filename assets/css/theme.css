@@ -129,15 +129,16 @@ h4.user-name {
  */
 .dma-code-input {
     background: #febe10;
-    padding: 25px;
+    padding: 10px;
 }
 .dma-code-input #activity-code {
-  width: 80%;
+  width: 100%;
   border: none;
   padding-left: 10px;
   padding-right: 0;
   font-size: 2em;
   height: 60px;
+  border: 2px solid #8d7c75;
 }
 .dma-code-input .activity-submit:before {
   content: '';
@@ -150,12 +151,21 @@ h4.user-name {
   background: transparent url(images/assets.svg) 0 -590px no-repeat;
 }
 .dma-code-input .help.small:not(h1) {
-height: auto;
-padding: 25px 25px 25px inherit;
-background: #fee1ac;
-width: 600px;
-margin-left: -25px;
-margin-bottom: -25px;
+  height: auto;
+  padding: 25px 25px 25px inherit;
+  background: #fee1ac;
+  width: 600px;
+  margin-left: -25px;
+  margin-bottom: -25px;
+}
+
+.dma-code-input button {
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  padding: 15px;
+  background-color: #d5cec8;
+  border-radius: 0;
 }
 
 /***********************************************************************
