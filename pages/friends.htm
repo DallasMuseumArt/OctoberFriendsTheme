@@ -11,14 +11,15 @@ limit = "10"
 
 
 [Recommendations]
-recommend = "Activity, Badge"
+recomend = "Activity, Badge"
 viewTemplate = "dma.friends::%sPreview"
-ifEmpty = "popular"
+
+[UserMostRecentBadge]
 ==
 <div class="row">
-<div class="col-md-7 col-sm-6">{% component 'ActivityCodeForm' %}</div>
+<div class="col-md-8 col-sm-8">{% component 'ActivityCodeForm' %}</div>
 
-<div class="col-md-5 col-sm-6"></div>
+<div class="col-md-4 col-sm-4">{% component 'UserMostRecentBadge' %}</div>
 </div>
 
 <h3>Things to Do</h3>
