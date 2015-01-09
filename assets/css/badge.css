@@ -7,6 +7,10 @@
     margin-bottom: 20px;
 }
 
+.preview img {
+    max-width: 100%;
+}
+
 .most-recent-badge h3 {
     margin-top: 0;
 }

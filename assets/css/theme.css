@@ -190,16 +190,16 @@ margin-bottom: -25px;
 }
 
 .main-menu .menu-item.active span:before, .main-menu .menu-item.active span:after {
-content: '';
-position: absolute;
-z-index: 1000;
-bottom: -1px;
-left: 50%;
-margin-left: -27px;
-border-bottom: 17px solid #fff;
-border-left: 27px solid transparent;
-border-right: 27px solid transparent;
-border-top: 0;
+  content: '';
+  position: absolute;
+  z-index: 1000;
+  bottom: -1px;
+  left: 50%;
+  margin-left: -27px;
+  border-bottom: 17px solid #fff;
+  border-left: 27px solid transparent;
+  border-right: 27px solid transparent;
+  border-top: 0;
 }
 
 #layout-nav {
@@ -307,4 +307,9 @@ border-top: 0;
 .glyphicon {
   color: #8d7c75;
   right: 10px;
+}
+
+/***** Misc ******/
+.preview img {
+    max-width: 100%;
 }
