@@ -11,37 +11,28 @@ limit = "10"
 
 
 [UserMostRecentBadge]
-
+mostrecentbadgetitle = "My Recent Badge"
 
 [Recommendations activities]
-recommend = "activity"
+recomend = "Activity, Badge"
 viewTemplate = "dma.friends::%sPreview"
-viewClass = "col-md-3, col-sm-4"
-ifEmpty = "popular"
 
 [Recommendations badges]
-recommend = "badge"
+recomend = "Activity, Badge"
 viewTemplate = "dma.friends::%sPreview"
-ifEmpty = "popular"
-limit = "3"
 ==
-<div class="row">
-<div class="col-md-8 col-sm-8">{% component 'ActivityCodeForm' %}</div>
+<div class="row content">
+    <div class="col-md-8 col-sm-8">
+        {% component 'ActivityCodeForm' %}
+        <h3>Things to Do</h3>
+        {% component 'activities' %}
+    </div>
 
-<div class="col-md-4 col-sm-4">{% component 'UserMostRecentBadge' %}</div>
-</div>
+    <div class="col-md-4 col-sm-4">
+        <h3>My Latest Badge</h3>
+        {% component 'UserMostRecentBadge' %}
 
-<div class="row">
-
-<div class="col-md-8 col-sm-8">
-<h3>Things to Do</h3>
-<p>{% component 'activities' %}</p>
-</div>
-
-
-<div class="col-md-4 col-sm-4">
-<h3>Badge to earn</h3>
-<p>{% component 'badges' %}</p>
-</div>
-
+        <h3>Badge to earn</h3>
+        {% component 'badges' %}
+    </div>
 </div>
