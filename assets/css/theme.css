@@ -46,7 +46,6 @@ body.full-res {
   text-rendering: optimizeLegibility; }
 
 blockquote, input, select, textarea, button, .button {
-  -webkit-appearance: none;
   background: #fff;
   color: #8d7c75;
   font-family: "Fedra Sans Screen Regular", "Helvetica Neue", sans-serif;
