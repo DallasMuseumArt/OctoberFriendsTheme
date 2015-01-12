@@ -64,6 +64,13 @@ input[type="button"], input[type="submit"], button, select, .button, .button:hov
   padding: 20px 20px 18px;
   text-align: center;
   border: none;
+  cursor: pointer;
+
+}
+
+button.btn-primary {
+  background-color: #00a4b0;
+  color: #fff;
 }
 
 fieldset {
