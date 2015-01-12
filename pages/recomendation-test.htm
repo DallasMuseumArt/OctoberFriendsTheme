@@ -4,7 +4,32 @@ layout = "default"
 hidden = "0"
 
 [Recommendations]
-recomend = "Activity, Badge"
+recommend = "activity"
+viewTemplate = "dma.friends::%sPreview"
+viewClass = "col-md-3, col-sm-4"
+ifEmpty = "weight"
+limit = "0"
+
+[Recommendations Recommendations2]
+recommend = "activity"
+viewTemplate = "dma.friends::%sPreview"
+viewClass = "col-md-3, col-sm-4"
+ifEmpty = "popular"
+limit = "6"
+
+[Recommendations Recommendations3]
+recommend = "badge"
+viewTemplate = "dma.friends::%sPreview"
+viewClass = "col-md-3, col-sm-4"
+ifEmpty = "popular"
+limit = "34"
+
+[Recommendations Recommendations4]
+recommend = "badge"
+viewTemplate = "dma.friends::%sPreview"
+viewClass = "col-md-3, col-sm-4"
+ifEmpty = "popular"
+limit = "5"
 ==
 <?php
 use RainLab\User\Models\User;
@@ -28,4 +53,14 @@ function onStart(){
 }
 ?>
 ==
+<h2>activity weight</h2>
 {% component 'Recommendations' %}
+
+<h2>Activity popular</h2>
+{% component 'Recommendations2' %}
+ 
+<h2>activity  nothing</h2> 
+{% component 'Recommendations3' %}
+
+<h2>recomendation 4</h2>
+{% component 'Recommendations4' %}
