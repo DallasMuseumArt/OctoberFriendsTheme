@@ -9,6 +9,14 @@
     min-height: 360px;
     margin-bottom: 20px;
 }
+
+.friends-badge.preview h4 {
+    margin: 10px 0;
+}
+.friends-activity.preview h4 {
+    margin: 0 0 10px 0;
+}
+
 .friends-activity.preview {
     min-height: 170px;
 }
