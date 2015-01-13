@@ -14,12 +14,16 @@ limit = "10"
 mostrecentbadgetitle = "My Recent Badge"
 
 [Recommendations activities]
-recomend = "Activity, Badge"
+recommend = "activity"
 viewTemplate = "dma.friends::%sPreview"
+viewClass = "col-md-3, col-sm-4"
+ifEmpty = "popular"
 
 [Recommendations badges]
-recomend = "Activity, Badge"
+recommend = "badge"
 viewTemplate = "dma.friends::%sPreview"
+ifEmpty = "popular"
+limit = "3"
 ==
 <div class="row content">
     <div class="col-md-8 col-sm-8">
