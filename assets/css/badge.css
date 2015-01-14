@@ -2,12 +2,23 @@
     margin-top: 20px;
 }
 
-.friends-badge.preview {
+.preview {
     background: #ebeae6;
     color: #8d7c75;
     padding: 15px;
-    min-height: 170px;
+    min-height: 360px;
     margin-bottom: 20px;
+}
+
+.friends-badge.preview h4 {
+    margin: 10px 0;
+}
+.friends-activity.preview h4 {
+    margin: 0 0 10px 0;
+}
+
+.friends-activity.preview {
+    min-height: 170px;
 }
 
 .preview img {
