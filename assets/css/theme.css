@@ -70,6 +70,7 @@ input[type="button"], input[type="submit"], button, select, .button, .button:hov
 
 button.btn-primary {
   background-color: #00a4b0;
+  border-color: #00a4b0;
   color: #fff;
 }
 
