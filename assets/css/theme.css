@@ -100,7 +100,7 @@ body.login {
 
 h4.user-name {
   color: #ec1c2e;
-  margin-top: 10px;
+  margin-top: 15px;
   text-transform: capitalize;
 }
 .login {
@@ -229,6 +229,10 @@ h4.user-name {
   border-top: 0;
 }
 
+ul.nav.navbar-nav.left {
+  margin-top: 0;
+}
+
 #layout-nav {
     color: #777;
     margin-bottom: 20px;
@@ -238,8 +242,12 @@ h4.user-name {
     color: #777;
 }
 
+.navbar-collapse {
+  padding: 0;
+}
+
 .nav .points {
-    margin: 10px;
+    margin: 15px;
     display: block;
 }
 
@@ -249,6 +257,10 @@ h4.user-name {
 
 .nav.right {
   float: right;
+}
+
+.nav .user-avatar {
+  margin-right: 10px;
 }
 
 /**
