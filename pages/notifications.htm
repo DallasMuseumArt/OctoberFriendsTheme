@@ -3,16 +3,15 @@ url = "/notifications"
 layout = "default"
 hidden = "0"
 
-[NotificationCounter]
-goToNotificationPage = "/"
-
 [NotificationList]
-onlyUnread = "1"
+onlyUnread = "0"
+autoMarkAsRead = "0"
+showLimit = "20"
 ==
 <div class="container">
     <div class="row">
         <div class="pull-right">
-        {% component 'NotificationCounter' %}
+        
         </div>
     </div>
     
@@ -23,7 +22,6 @@ onlyUnread = "1"
 		</div>
 	
 		<div class="col-md-8">
-			<h4>Notifications</h4>
             {% component 'NotificationList' %}
 		</div>
 	</div>
