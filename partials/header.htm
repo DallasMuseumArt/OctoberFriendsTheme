@@ -3,8 +3,34 @@
 <html>
     <head>
         <title>Friends - {{ this.page.title }}</title>
+
+        <link rel="Shortcut Icon" href="{{ 'assets/images/favicon.ico'|theme }}" type="image/x-icon">
         <meta name="author" content="Dallas Museum of Art">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex,follow">
+
+
+        <!-- include apple icons and splash screens -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+
+        <!-- iPad -->
+        <link href="{{ 'assets/images/apple-touch-icon-72x72.png'|theme }}" sizes="72x72" rel="apple-touch-icon">
+        <link href="{{ 'assets/images/apple-touch-startup-image-768x1004.png'|theme }}" media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: portrait)
+                 and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+        <link href="{{ 'assets/images/apple-touch-startup-image-748x1024.png'|theme }}" media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: landscape)
+                 and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+
+        <!-- iPad (Retina) -->
+        <link href="{{ 'assets/images/apple-touch-icon-144x144.png'|theme }}" sizes="144x144" rel="apple-touch-icon">
+        <link href="{{ 'assets/images/apple-touch-startup-image-1536x2008.png'|theme }}" media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: portrait)
+                 and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+        <link href="{{ 'assets/images/apple-touch-startup-image-1496x2048.png'|theme}}" media="(device-width: 768px) and (device-height: 1024px)
+                 and (orientation: landscape)
+                 and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
         <link rel="icon" type="image/png" href="{{ 'assets/images/logo.png'|theme }}" />
         {% styles %}
         <link href="{{ [

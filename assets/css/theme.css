@@ -53,7 +53,13 @@ blockquote, input, select, textarea, button, .button {
   vertical-align: center;
   position: relative;
   margin: 0;
-  color: #8d7c75; }
+  color: #8d7c75;
+}
+
+p {
+  margin: 10px 0;
+}
+
 input[type="button"], input[type="submit"], button, select, .button, .button:hover {
   text-decoration: none;
   -webkit-border-radius: 6px;
@@ -65,7 +71,12 @@ input[type="button"], input[type="submit"], button, select, .button, .button:hov
   text-align: center;
   border: none;
   cursor: pointer;
+}
 
+.form-control {
+  border: 2px solid #8d7c75 !important;
+  border-radius: 0 !important;
+  padding: 20px;
 }
 
 button.btn-primary {
