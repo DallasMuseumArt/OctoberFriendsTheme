@@ -1,3 +1,5 @@
+[NotificationCounter]
+goToNotificationPage = "/notifications"
 ==
 <!DOCTYPE html>
 <html>
@@ -62,7 +64,7 @@
                     </ul>
                     <ul class="nav navbar-nav right">
                         <li><a class="nav-item activity-feed icon-list" href="/activity-stream">Activity Stream</a></li>
-                        <li><a class="nav-item notifications-feed icon-envelope" href="/notifications">Notifications</a></li>
+                        <li>{% component 'NotificationCounter' %}</li>
                         <!--
                         <li><a class="nav-item group-feed icon-users" href="/group">Groups</a></li>
                         -->
