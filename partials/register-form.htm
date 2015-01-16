@@ -5,7 +5,9 @@
         <!-- Slide 1 -->
         <div class="item active">
             <h3>Basic Info</h3>
-
+<p>
+You are signing up to become a DMA Friend. Once you complete the registration process, you will be ready to check out new badges and activities that are waiting for you. As you participate, you’ll earn credit you can use to pick from a number of fun rewards.
+</p>
             <div class="form-group is-required">
                 <label>First Name</label>
                 <input type="text" id="first-name" name="first_name" class="form-control"/>
@@ -42,6 +44,9 @@
         <!-- Slide 2 -->
         <div class="item">
             <h3>Account information</h3>
+            <p>
+DMA will use your e-mail address consistent with DMA’s Privacy Policy to send you messages concerning your Friends membership.
+            </p>
             <div class="form-group is-required">
                 <label>Username</label>
                 <input type="text" id="name" name="username" class="form-control"/>
@@ -51,21 +56,34 @@
                 <input type="text" id="email" name="email" class="form-control"/>
             </div>
 
-            <div class="row">
-                <div class="form-group is-required col-md-6 col-sm-6">
-                    <label class="control-label" for="password">Password</label>
-                    <input id="password" type="password" name="password" class="form-control"/>
-                </div>
-                    <div class="form-group is-required col-md-6 col-sm-6">
-                    <label class="control-label" for="password-confirmation">Password Confirm</label>
-                    <input id="password-confirmation" type="password" name="password_confirmation" class="form-control"/>
-                </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="email_optin" value="1" checked="checked"/> 
+                    Please send me e-mail concerning other DMA news, events, and offerings. I understand I may unsubscribe later if I choose to do so.
+                </label>
             </div>
         </div>
 
         <!-- Slide 3 -->
         <div class="item">
+            <h3>Create a Password</h3>
+            <p>
+Your password is used for security and verification purposes. Your password is private, so please keep it safe!
+            </p>
+            <div class="form-group is-required">
+                <label class="control-label" for="password">Password</label>
+                <input id="password" type="password" name="password" class="form-control"/>
+            </div>
+                <div class="form-group is-required">
+                <label class="control-label" for="password-confirmation">Password Confirm</label>
+                <input id="password-confirmation" type="password" name="password_confirmation" class="form-control"/>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="item">
             <h3>Contact Info</h3>
+Sharing your mobile number with DMA Friends is optional but enables you to use Friends in new ways. By entering your phone number here, you agree to allow us to text message you occasionally about your friends membership and your activities.
             <div class="form-group">
                 <label>Phone Number</label>
                 <input type="text" name="phone" class="form-control"/>
@@ -97,75 +115,79 @@
             </div>
         </div>
 
-        <!-- Slide 4 -->
-        <div class="item">
-            <h3>Demographic Info</h3>
-
-            <div class="row">
-                <div class="form-group col-md-6 col-sm-6">
-                    <label>Race</label>
-                    <select name="race" class="form-control">
-                        <option value=""> - Select One - </option>
-                    <?php foreach ($options['race'] as $option) { ?>
-                        <option><?= $option ?></option>
-                    <?php } ?>
-                    </select>
-                </div>
-                <div class="form-group col-md-6 col-sm-6">
-                    <label>Education</label>
-                    <select name="education" class="form-control">
-                        <option value=""> - Select One - </option>
-                    <?php foreach ($options['education'] as $option) { ?>
-                        <option><?= $option ?></option>
-                    <?php } ?>
-                    </select>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="form-group col-md-6 col-sm-6">
-                    <label>Household Income</label>
-                    <select name="household_income" class="form-control">
-                        <option value=""> - Select One - </option>
-
-                    <?php foreach ($options['household_income'] as $option) { ?>
-                        <option><?= $option ?></option>
-                    <?php } ?>
-                    </select>
-                </div>
-                <div class="form-group col-md-6 col-sm-6">
-                    <label>Number of people in your household</label>
-                    <select name="household_size" class="form-control">
-                        <option value=""> - Select One - </option>
-
-                    <?php for ($i = 1; $i < 10; $i++) { ?>
-                        <option><?= $i?></option>
-                    <?php } ?>
-                        <option>10+</option>
-                    </select>
-                </div>
-            </div>
-
-        </div>
-
         <!-- Slide 5 -->
         <div class="item">
-            <h3>Social Media</h3>
+            <?= $this->getAvatars() ?>
+            <div class="is-required">
+                <input type="hidden" name="avatar" id="avatar" />
+            </div>
         </div>
+
+        <!-- Slide 6 -->
+        <div class="item">
+            <div class="form-group">
+                <label>Race</label>
+                <select name="race" class="form-control">
+                    <option value=""> - Select One - </option>
+                <?php foreach ($options['race'] as $option) { ?>
+                    <option><?= $option ?></option>
+                <?php } ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Education</label>
+                <select name="education" class="form-control">
+                    <option value=""> - Select One - </option>
+                <?php foreach ($options['education'] as $option) { ?>
+                    <option><?= $option ?></option>
+                <?php } ?>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Household Income</label>
+                <select name="household_income" class="form-control">
+                    <option value=""> - Select One - </option>
+
+                <?php foreach ($options['household_income'] as $option) { ?>
+                    <option><?= $option ?></option>
+                <?php } ?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Number of people in your household</label>
+                <select name="household_size" class="form-control">
+                    <option value=""> - Select One - </option>
+
+                <?php for ($i = 1; $i < 10; $i++) { ?>
+                    <option><?= $i?></option>
+                <?php } ?>
+                    <option>10+</option>
+                </select>
+            </div>
+
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="item">
+            <div class="terms">
+            <?php $controller = new Cms\Controllers\Themes();
+                print $controller->makePartial('@/themes/friends/partials/terms-and-conditions.htm'); 
+            ?>
+            </div>
+        </div>
+
       </div>
 
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-register" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-register" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
 
-    <button type="submit" data-request="onRegisterSubmit" data-hotkey="ctrl+enter, cmd+enter, enter" class="register btn btn-danger disabled">Register</button>
+    <div class="buttons">
+        <a class="registration-prev btn btn-primary icon-arrow-left" href="#carousel-register" role="button" data-slide="prev">&nbsp;</a>
+        <a class="registration-next btn btn-primary disabled" href="#carousel-register" role="button" data-slide="next">Continue</a>
+     
+        <button type="submit" data-request="onRegisterSubmit" class="register btn btn-primary">Accept Terms and Conditions</button>
+        <button type="button" class="btn btn-default" data-dismiss="popup">Cancel</button>
+    </div>
 </form>
 
 
@@ -174,30 +196,15 @@
 
     $('input, select').on('keyup', function() {
 
-        var requiredFieldsComplete = false;
-
-        $('div.is-required').each(function(i) {
-            var inputValue = $(this).find('input, select').val();
-            if (!inputValue) {
-                requiredFieldsComplete = false
-                return false;
-            }
-
-            requiredFieldsComplete = true;
-            
-        });
-
-        if (requiredFieldsComplete) {
-            $('button.register').removeClass('disabled');
-        } else {
-            $('button.register').addClass('disabled');
-        }
+        /** Form validation **/
 
         var spanError = '<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>';
         var spanSuccess = '<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>';
         var passwordAlert = '<div class="password-alert alert alert-danger" role="alert">Passwords must to match</div>';
 
-        // check that passwords match
+        /** check that passwords match */
+
+        // passwords exist but do not match
         if (
             $('#password').val() != $('#password-confirmation').val()
             && $('#password-confirmation').val()
@@ -211,10 +218,11 @@
             $('#password').after(spanError);
             $('#password-confirmation').after(spanError);
 
-            $('button.register').addClass('disabled');
+            $('.registration-next').addClass('disabled');
 
             $('#password').parents('.row').after(passwordAlert);
 
+        // Passwords match and values arent null
         } else if (
             $('#password').val() == $('#password-confirmation').val()
             && $('#password-confirmation').val()
@@ -227,19 +235,93 @@
             $('input[type="password"]').parent('.form-group').addClass('has-success');
             $('#password').after(spanSuccess);
             $('#password-confirmation').after(spanSuccess);
+
+            $('.registration-next').removeClass('disabled');
+
+        // or else
         } else {
             $('input[type="password"]').parent('.form-group').removeClass('has-error');
             $('input[type="password"]').parent('.form-group').removeClass('has-success');
             $('.form-control-feedback').remove();
             $('div.password-alert').remove();
 
-            $('button.register').addClass('disabled');
+            $('.registration-next').addClass('disabled');
         }
     });
+
+    /** Carousel **/
+    $('.registration-prev, .register').hide();
 
     $('#carousel-register').carousel({
         interval: false,
         wrap: false
     });
+
+    checkRequired($('#carousel-register .item.active'));
+
+    $('#carousel-register').on('slid.bs.carousel', function(e) {
+        checkRequired($('#carousel-register .item.active'));
+    });
+
+    $('#carousel-register').on('slide.bs.carousel', function(e) {
+        $('.registration-next').addClass('disabled');
+    });
+
+    function checkRequired(obj) {
+
+        var idx = $('.item.active').index();
+
+        if (idx > 0) {
+            $('.registration-prev').show();
+        } else {
+            $('.registration-prev').hide();
+        }
+
+        if (idx == 6) {
+            $('.registration-next').hide();
+            $('.register').show();
+        } else {
+            $('.register').hide();
+            $('.registration-next').show();
+        }
+
+        if (!obj.find('div.is-required').length) {
+            $('.registration-next').removeClass('disabled');
+            return;
+        }
+
+        obj.find('input, select').on('keyup, change', function(e) {
+            var requiredFieldsComplete = false;
+
+            $('#carousel-register .item.active').find('div.is-required').each(function(i) {
+                var inputValue = $(this).find('input, select').val();
+
+                if (!inputValue) {
+                    requiredFieldsComplete = false
+                    return false;
+                }
+
+                requiredFieldsComplete = true;
+                
+            });
+
+            if (requiredFieldsComplete) {
+                $('.registration-next').removeClass('disabled');
+            } else {
+                $('.registration-next').addClass('disabled');
+            }
+        });
+    }
+
+    // Make avatars selectable
+    $('.selectable').selectable({
+        selected: function( event, ui ) {
+            var fileName = $(ui.selected).find('img').attr('src');
+            $('#avatar').val(fileName);
+            $('.registration-next').removeClass('disabled');
+        }
+    });
+
+
 })(jQuery);
 </script>
