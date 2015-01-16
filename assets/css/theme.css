@@ -378,6 +378,11 @@ ul.nav.navbar-nav.left {
   background: #fff;
   border-radius: 6px 6px 0 0;
 }
+
+.modal-header .close {
+  color: #000;
+}
+
 .modal-title {
   color: #ec1c2e;
   font-size: 3em !important;
