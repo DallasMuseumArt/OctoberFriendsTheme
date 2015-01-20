@@ -1,4 +1,7 @@
 description = "Default layout"
+
+[UserTimeout]
+title = "Are you still there?"
 ==
 <?php
 function onStart()
@@ -30,8 +33,10 @@ function onStart()
         </div>
         </ul>
     </div>
-
+    
     {% page %}
+    
+    {% component 'UserTimeout' %}
 </section>
 
 {% partial "footer" %}

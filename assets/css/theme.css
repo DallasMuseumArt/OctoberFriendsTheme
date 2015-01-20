@@ -316,7 +316,7 @@ ul.nav.navbar-nav.left {
 #flashMessages {
     position: absolute;
     right: 1%;
-    z-index: 1000;
+    z-index: 2000;
 }
 
 /**
