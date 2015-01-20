@@ -390,6 +390,15 @@ ul.nav.navbar-nav.left {
   font-weight: normal !important;
 }
 
+.modal-dialog .buttons {
+  text-align: right;
+  margin-right: 10px;
+}
+
+.modal-dialog .buttons .btn {
+  margin: 0 10px;
+}
+
 /**** Carousel ****/
 .carousel-inner > .item {
   padding: 0 20px;
@@ -402,14 +411,6 @@ ul.nav.navbar-nav.left {
   padding: 10px;
 }
 
-#register .buttons {
-  text-align: right;
-  margin-right: 10px;
-}
-
-#register .buttons .btn {
-  margin: 0 10px;
-}
 #register .buttons .registration-prev {
   width: 35px;
 }
