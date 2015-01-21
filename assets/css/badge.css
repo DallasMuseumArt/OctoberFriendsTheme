@@ -8,6 +8,7 @@
     padding: 15px;
     min-height: 360px;
     margin-bottom: 20px;
+    position: relative;
 }
 
 .friends-badge.preview h4 {
@@ -27,4 +28,19 @@
 
 .most-recent-badge h3 {
     margin-top: 0;
+}
+
+.times-earned {
+    position: absolute;
+    left: 5px;
+    top: -10px;
+    display: inline-block;
+    width: 2.5em;
+    height: 2.5em;
+    background: #4e5f7d;
+    color: #fff;
+    border-radius: 100%;
+    line-height: 2.65em;
+    margin: 15px 0;
+    text-align: center;
 }
