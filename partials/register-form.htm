@@ -1,4 +1,4 @@
-<form id="register" method="POST" data-request="onRegisterSubmit">
+<form id="register" method="POST" data-request="onRegisterSubmit" data-parsley-validate>
     <div id="carousel-register" class="registration-carousel carousel slide" data-ride="carousel">
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
@@ -10,11 +10,11 @@ You are signing up to become a DMA Friend. Once you complete the registration pr
 </p>
             <div class="form-group is-required">
                 <label>First Name</label>
-                <input type="text" id="first-name" name="first_name" class="form-control"/>
+                <input type="text" id="first-name" name="first_name" class="form-control" data-parsley-required="true"/>
             </div>
             <div class="form-group is-required">
                 <label>Last Name</label>
-                <input type="text" id="last-name" name="last_name" class="form-control"/>
+                <input type="text" id="last-name" name="last_name" class="form-control" data-parsley-required="true"/>
             </div>
 
             <div class="row">
@@ -29,14 +29,10 @@ You are signing up to become a DMA Friend. Once you complete the registration pr
                         <input type="text" id="birth-date" name="birth_date" class="form-control" autocomplete="off">
                     </div>
                 </div>
-                <div class="form-group col-md-6 col-sm-6">
-                    <label>Gender</label>
-                    <select id="gender" name="gender" class="form-control">
-                        <option value="">Choose not to disclose</option>
-                    <?php foreach ($options['gender'] as $option) { ?>
-                        <option><?= $option ?></option>
-                    <?php } ?>
-                    </select>
+
+                <div class="form-group col-md-6 col-sm-6 is-required">
+                    <label>Zip</label>
+                    <input type="text" name="zip" class="form-control" data-parsley-type="number" data-parsley-length="[5, 5]"/>
                 </div>
             </div>
         </div>
@@ -53,7 +49,7 @@ DMA will use your e-mail address consistent with DMA’s Privacy Policy to send 
             </div>
             <div class="form-group is-required">
                 <label>Email</label>
-                <input type="text" id="email" name="email" class="form-control"/>
+                <input type="email" id="email" name="email" class="form-control"/>
             </div>
 
             <div class="form-group">
@@ -72,11 +68,23 @@ Your password is used for security and verification purposes. Your password is p
             </p>
             <div class="form-group is-required">
                 <label class="control-label" for="password">Password</label>
-                <input id="password" type="password" name="password" class="form-control"/>
+                <input 
+                    id="password" 
+                    type="password" 
+                    name="password" 
+                    class="form-control" 
+                    data-parsley-minlength="6"
+                />
             </div>
                 <div class="form-group is-required">
                 <label class="control-label" for="password-confirmation">Password Confirm</label>
-                <input id="password-confirmation" type="password" name="password_confirmation" class="form-control"/>
+                <input 
+                    id="password-confirmation" 
+                    type="password" 
+                    name="password_confirmation" 
+                    class="form-control" 
+                    data-parsley-minlength="6"
+                />
             </div>
         </div>
 
@@ -98,7 +106,7 @@ Sharing your mobile number with DMA Friends is optional but enables you to use F
                     <label>City</label>
                     <input type="text" name="city" class="form-control"/>
                 </div>
-                <div class="form-group col-md-3 col-sm-3">
+                <div class="form-group col-md-6 col-sm-6">
                     <label>State</label>
                     <select name="state" class="form-control">
                     <?php foreach($options['states'] as $id => $state) { ?>
@@ -107,10 +115,6 @@ Sharing your mobile number with DMA Friends is optional but enables you to use F
                         ><?= $state ?></option>
                     <?php } ?>
                     </select>
-                </div>
-                    <div class="form-group col-md-3 col-sm-3 is-required">
-                    <label>Zip</label>
-                    <input type="text" name="zip" class="form-control"/>
                 </div>
             </div>
         </div>
@@ -125,6 +129,15 @@ Sharing your mobile number with DMA Friends is optional but enables you to use F
 
         <!-- Slide 6 -->
         <div class="item">
+            <div class="form-group">
+                <label>Gender</label>
+                <select id="gender" name="gender" class="form-control">
+                    <option value="">Choose not to disclose</option>
+                <?php foreach ($options['gender'] as $option) { ?>
+                    <option><?= $option ?></option>
+                <?php } ?>
+                </select>
+            </div>
             <div class="form-group">
                 <label>Race</label>
                 <select name="race" class="form-control">
@@ -190,5 +203,5 @@ Sharing your mobile number with DMA Friends is optional but enables you to use F
     </div>
 </form>
 
-<script src="/themes/friends/assets/vendor/jquery-validation/dist/jquery.validate.js"></script>
+<script src="/themes/friends/assets/vendor/parsley.js"></script>
 <script src="/themes/friends/assets/javascript/registration-form.js"></script>

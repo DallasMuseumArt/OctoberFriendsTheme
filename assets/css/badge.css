@@ -6,13 +6,20 @@
     background: #ebeae6;
     color: #8d7c75;
     padding: 15px;
-    min-height: 360px;
+    height: 400px;
     margin-bottom: 20px;
     position: relative;
 }
 
+.most-recent-badge .preview {
+    height: auto;
+}
+
 .friends-badge.preview h4 {
-    margin: 10px 0;
+    border-top: 2px solid #fff;
+    width: 120%;
+    padding: 10px 15px 0 15px;
+    margin: 10px 0 10px -15px;
 }
 .friends-activity.preview h4 {
     margin: 0 0 10px 0;
