@@ -4,40 +4,76 @@ layout = "default"
 hidden = "0"
 
 [NotificationCounter]
-goToNotificationPage = "/"
+goToNotificationPage = "/account/logout"
+cssClass = "nav-item notifications-feed icon-envelope"
 
 [NotificationList]
-onlyUnread = "1"
+onlyUnread = "0"
+autoMarkAsRead = "0"
+showLimit = "20"
 ==
 <?php
 function onStart(){
     
     $user = \Auth::getUser();
+    /*
     \Postman::send('simple', function($notification) use ($user){
          	$notification->to($user, $user->name);
          	$notification->addData([
          	    'points' => 5,
          	    'reward' => 'Free Icecream'
          	]);
+         	
     });
+    */
     $group = NULL;
     //$group = \DMA\Friends\Models\UserGroup::find(10);
     //$fromUser  =  $group->owner;
     $fromUser = $user;
-    \Postman::send('simple', function($notification) use ($user, $fromUser, $group){
-         	$notification->to($user, $user->name);
-         	$notification->from($fromUser);
-         	$notification->subject('Join my group');
-         	$notification->attachObject($group);
-         	$notification->addData(['message' => 'Helloo!!!']);
-    });
     
     \Postman::send('simple', function($notification) use ($user, $fromUser, $group){
          	$notification->to($user, $user->name);
          	$notification->from($fromUser);
+         	$notification->subject('Join my group');
+         	//$notification->attachObject($group);
+         	$notification->message('Helloo!!!');
+    },['flash', 'kiosk']);
+    
+    \Postman::send('simple', function($notification) use ($user, $fromUser, $group){
+         	$notification->to($user, $user->name);
+         	$notification->from($fromUser);
+         	$notification->subject('Join my group');
+         	//$notification->attachObject($group);
+         	$notification->message('Helloo-1!!!');
+    },['flash', 'kiosk']);
+    
+    
+    \Postman::send('simple', function($notification) use ($user, $fromUser, $group){
+         	$notification->to($user, $user->name);
+         	$notification->from($fromUser);
+         	//$notification->attachObject($group);
+         	$notification->message('Helloo-2!!');
+         	//$notification->addViewSettings(['type' => 'error']);
+    },['flash', 'kiosk']);
+    
+    \Postman::send('simple', function($notification) use ($user, $fromUser, $group){
+         	$notification->to($user, $user->name);
+         	$notification->from($fromUser);
+         	//$notification->attachObject($group);
+         	$notification->message('error!');
+         	$notification->addViewSettings(['type' => 'error']);
+    },['flash', 'kiosk']);
+    
+    
+    /*
+    \Postman::send('simple', function($notification) use ($user, $fromUser, $group){
+         	$notification->to($user, $user->name);
+         	$notification->from($fromUser);
          	$notification->subject('Join my group (dummy)');
+         	$notification->message('dummy message');
          	$notification->attachObject($group);
-    }, ['dummy']);    
+    }, ['dummy', 'flash']);    
+    */
     
 }
 ?>
