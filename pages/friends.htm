@@ -13,13 +13,6 @@ limit = "10"
 [UserMostRecentBadge]
 mostrecentbadgetitle = "My Recent Badge"
 
-[Recommendations activities]
-recommend = "activity"
-viewTemplate = "dma.friends::%sPreview"
-viewClass = "col-md-12, col-sm-12"
-ifEmpty = "popular"
-limit = "6"
-
 [Recommendations badges]
 recommend = "badge"
 viewTemplate = "dma.friends::%sPreview"
@@ -37,8 +30,5 @@ limit = "12"
     <div class="col-md-4 col-sm-4">
         <h3>My Latest Badge</h3>
         {% component 'UserMostRecentBadge' %}
-
-        <h3>Recommended Activities</h3>
-        {% component 'activities' %}
     </div>
 </div>
