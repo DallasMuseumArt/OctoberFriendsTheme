@@ -1,57 +1,37 @@
 (function($) {
 
-    $('input, select').on('keyup', function() {
-
-        /** Form validation **/
-
-        var spanError = '<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>';
-        var spanSuccess = '<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>';
-        var passwordAlert = '<div class="password-alert alert alert-danger" role="alert">Passwords must to match</div>';
-
-        /** check that passwords match */
-
-        // passwords exist but do not match
-        if (
-            $('#password').val() != $('#password-confirmation').val()
-            && $('#password-confirmation').val()
-            && $('#password').val()
-        ) {
-            $('.form-control-feedback').remove();
-            $('div.password-alert').remove();
-
-            $('#password').parent('.form-group').addClass('has-error');
-            $('#password-confirmation').parent('.form-group').addClass('has-error');
-            $('#password').after(spanError);
-            $('#password-confirmation').after(spanError);
-
-            $('.registration-next').addClass('disabled');
-
-            $('#password').parents('.row').after(passwordAlert);
-
-        // Passwords match and values arent null
-        } else if (
-            $('#password').val() == $('#password-confirmation').val()
-            && $('#password-confirmation').val()
-            && $('#password').val()
-        ) {
-            $('input[type="password"]').parent('.form-group').removeClass('has-error');
-            $('.form-control-feedback').remove();
-            $('div.password-alert').remove();
-
-            $('input[type="password"]').parent('.form-group').addClass('has-success');
-            $('#password').after(spanSuccess);
-            $('#password-confirmation').after(spanSuccess);
-
-            $('.registration-next').removeClass('disabled');
-
-        // or else
-        } else {
-            $('input[type="password"]').parent('.form-group').removeClass('has-error');
-            $('input[type="password"]').parent('.form-group').removeClass('has-success');
-            $('.form-control-feedback').remove();
-            $('div.password-alert').remove();
-
-            $('.registration-next').addClass('disabled');
+    $.fn.extend({
+        donetyping: function(callback,timeout){
+            timeout = timeout || 1e3; // 1 second default timeout
+            var timeoutReference,
+                doneTyping = function(el){
+                    if (!timeoutReference) return;
+                    timeoutReference = null;
+                    callback.call(el);
+                };
+            return this.each(function(i,el){
+                var $el = $(el);
+                // Chrome Fix (Use keyup over keypress to detect backspace)
+                // thank you @palerdot
+                $el.is(':input') && $el.on('keyup keypress',function(e){
+                    // This catches the backspace button in chrome, but also prevents
+                    // the event from triggering too premptively. Without this line,
+                    // using tab/shift+tab will make the focused element fire the callback.
+                    if (e.type=='keyup' && e.keyCode!=8) return;
+                    
+                    // Check if timeout has been set. If it has, "reset" the clock and
+                    // start over again.
+                    if (timeoutReference) clearTimeout(timeoutReference);
+                    timeoutReference = setTimeout(function(){
+                        // if we made it here, our timeout has elapsed. Fire the
+                        // callback
+                        doneTyping(el);
+                    }, timeout);
+                }).on('blur',function(){
+                    // If we can, fire the event since we're leaving the field
+                    doneTyping(el);
+                });
+            });
         }
     });
 
@@ -69,6 +49,9 @@
         $('.registration-next').addClass('disabled');
         checkRequired($('#carousel-register .item.active'));
 
+        if (e.direction == 'right' && false !== $('#register').parsley().validate('block' + $('.item.active').index())) {
+            $('.registration-next').removeClass('disabled');
+        }
     });
 
     function checkRequired(obj) {
@@ -89,14 +72,12 @@
             $('.registration-next').show();
         }
 
-console.log(obj.find('div.is-required').length);
         if (obj.find('div.is-required').length === 0) {
-console.log('asdlkjhndskjfh');
             $('.registration-next').removeClass('disabled');
             return;
         }
 
-        obj.find('input, select').on('keyup, change', function(e) {
+        obj.find('input, select').donetyping(function(e) {
             var requiredFieldsComplete = false;
 
             if (false !== $('#register').parsley().validate('block' + idx)) {
@@ -108,7 +89,7 @@ console.log('asdlkjhndskjfh');
             } else {
                 $('.registration-next').addClass('disabled');
             }
-        });
+        }, 400);
     
     }
 

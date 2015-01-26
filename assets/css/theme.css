@@ -378,6 +378,13 @@ ul.nav.navbar-nav.left {
 }
 
 /**** Modal Dialog ****/
+.modal-dialog {
+  top: 10%;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+  position: absolute;
+}
 .modal-header {
   background: #fff;
   border-radius: 6px 6px 0 0;
