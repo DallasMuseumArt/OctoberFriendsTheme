@@ -315,8 +315,12 @@ ul.nav.navbar-nav.left {
  */
 #flashMessages {
     position: absolute;
-    right: 1%;
+    left: 25%;
+    right: 25%;
+    top: 25%;
     z-index: 2000;
+    font-size: 2em;
+    text-align: center;
 }
 
 /**
