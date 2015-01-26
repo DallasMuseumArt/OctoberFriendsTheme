@@ -3,6 +3,7 @@
     color: #8d7c75;
     margin-bottom: 20px;
     height: 180px;
+    padding: 0;
 }
 
 .friends-reward button {
@@ -11,6 +12,7 @@
 
 .friends-reward .image {
     padding-left: 0;
+    float: left;
 }
 
 .friends-reward .image img {
