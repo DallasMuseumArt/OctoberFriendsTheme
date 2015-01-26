@@ -377,6 +377,7 @@ ul.nav.navbar-nav.left {
 .modal-header {
   background: #fff;
   border-radius: 6px 6px 0 0;
+  border: none;
 }
 
 .modal-header .close {
@@ -386,8 +387,12 @@ ul.nav.navbar-nav.left {
 .modal-title {
   color: #ec1c2e;
   font-size: 3em !important;
-  margin-left: 55px;
+  margin-left: 15px;
   font-weight: normal !important;
+}
+
+.modal-body {
+  padding: 10px 30px;
 }
 
 .modal-dialog .buttons {
