@@ -66,11 +66,9 @@
     checkRequired($('#carousel-register .item.active'));
 
     $('#carousel-register').on('slid.bs.carousel', function(e) {
-        checkRequired($('#carousel-register .item.active'));
-    });
-
-    $('#carousel-register').on('slide.bs.carousel', function(e) {
         $('.registration-next').addClass('disabled');
+        checkRequired($('#carousel-register .item.active'));
+
     });
 
     function checkRequired(obj) {
@@ -91,7 +89,9 @@
             $('.registration-next').show();
         }
 
-        if (!obj.find('div.is-required').length) {
+console.log(obj.find('div.is-required').length);
+        if (obj.find('div.is-required').length === 0) {
+console.log('asdlkjhndskjfh');
             $('.registration-next').removeClass('disabled');
             return;
         }
@@ -99,17 +99,9 @@
         obj.find('input, select').on('keyup, change', function(e) {
             var requiredFieldsComplete = false;
 
-            $('#carousel-register .item.active').find('div.is-required').each(function(i) {
-                var inputValue = $(this).find('input, select').val();
-
-                if (!inputValue) {
-                    requiredFieldsComplete = false
-                    return false;
-                }
-
+            if (false !== $('#register').parsley().validate('block' + idx)) {
                 requiredFieldsComplete = true;
-                
-            });
+            }
 
             if (requiredFieldsComplete) {
                 $('.registration-next').removeClass('disabled');
@@ -117,6 +109,7 @@
                 $('.registration-next').addClass('disabled');
             }
         });
+    
     }
 
     // Make avatars selectable
