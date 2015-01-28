@@ -9,10 +9,47 @@
     height: 400px;
     margin-bottom: 20px;
     position: relative;
+    overflow: hidden;
+}
+
+.preview a {
+    color: #8d7c75;
+    text-decoration: none;
 }
 
 .most-recent-badge .preview {
     height: auto;
+}
+
+.preview .special {
+    position: absolute;
+    background: #00a4b0;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 11px;
+    line-height: 11px;
+    font-family: "Fedra Sans Screen Bold", "Helvetica Neue", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 1px;
+    padding: .5em 3em .38em;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    z-index: 2;
+}
+
+.preview .special.limited-edition {
+    top: 35px;
+    left: -40px;
+}
+.preview .special.featured {
+    top: 25px;
+    left: -30px;
 }
 
 .friends-badge.preview h4 {
