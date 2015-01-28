@@ -136,6 +136,24 @@ body.login {
   font-size: 16px;
 }
 
+.icon-bookmark:hover,
+.icon-bookmark {
+  background-color: #fff;
+  color: #8d7c75;
+}
+
+.icon-bookmark:before {
+  margin-right: 10px;
+}
+
+.icon-bookmark.bookmarked {
+  background: #fee1ac;
+}
+
+.icon-bookmark.bookmarked:before {
+  color: #febe10;
+}
+
 #layout-content .info-box {
   margin: 20% auto 0 auto;
   width: 50%;
