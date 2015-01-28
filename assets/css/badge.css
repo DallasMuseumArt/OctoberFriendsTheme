@@ -43,6 +43,29 @@
     z-index: 2;
 }
 
+.preview .progress-wrap {
+    margin-left: -15px;
+    padding: 0 15px;
+    position: absolute;
+    top: 120px;
+    width: 100%;
+}
+.preview .progress {
+    height: 20px;
+    width: 100%;
+    border: 3px solid white;
+    border-radius: 10px;
+    background: #d5cec8;
+    z-index: 2;
+}
+
+.preview .progress-indicator {
+    background: #febe10;
+    height: 15px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+}
+
 .preview .special.limited-edition {
     top: 35px;
     left: -40px;
