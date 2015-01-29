@@ -10,3 +10,9 @@
       height: 300px;
     }
 }
+
+/**** Login form ****/
+#login #errorBlock {
+  margin: 15px 0;
+  display: block;
+}
