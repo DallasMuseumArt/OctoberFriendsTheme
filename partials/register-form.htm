@@ -163,7 +163,7 @@ Sharing your mobile number with DMA Friends is optional but enables you to use F
                     <label>State</label>
                     <select name="state" class="form-control">
                     <?php foreach($options['states'] as $state) { ?>
-                        <option value="<?= $id ?>" 
+                        <option value="<?= $state->id ?>" 
                             <?php if (\DMA\Friends\Models\Settings::get('default_state') == $state->id) echo 'selected="selected"'; ?>
                         ><?= $state->name ?></option>
                     <?php } ?>
