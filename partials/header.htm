@@ -61,7 +61,7 @@ cssClass = "nav-item notifications-feed icon-envelope"
                     <ul class="nav navbar-nav left">
                         <li><img class="user-avatar" src="{{ user.avatar.getThumb(50, 50) }}"></li>
                         <li><h4 class="user-name">Hello, {{ user.metadata.first_name }}</h4></li>
-                        <li><span class="points">{{ user.points }} Points</span></li>
+                        <li><span class="points">{{ user.points|number_format }} Points</span></li>
                     </ul>
                     <ul class="nav navbar-nav right">
                         <li><a class="nav-item activity-feed icon-list" href="/activity-stream">Activity Stream</a></li>

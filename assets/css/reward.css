@@ -44,3 +44,21 @@
     list-style: none;
     padding: 0;
 }
+
+.reward-full .image img {
+    max-width: 100%;
+}
+
+.reward-full .redeem {
+    width: 100%;
+    margin: 30px 0;
+}
+
+.reward-full .buttons {
+    margin-right: 15px;
+}
+
+.reward-full .description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}

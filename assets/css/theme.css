@@ -140,6 +140,7 @@ body.login {
 .icon-bookmark {
   background-color: #fff;
   color: #8d7c75;
+  border-color: #8d7c75;
 }
 
 .icon-bookmark:before {
@@ -148,6 +149,7 @@ body.login {
 
 .icon-bookmark.bookmarked {
   background: #fee1ac;
+  border-color: #febe10;
 }
 
 .icon-bookmark.bookmarked:before {
