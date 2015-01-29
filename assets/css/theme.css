@@ -136,6 +136,10 @@ body.login {
   font-size: 16px;
 }
 
+.icon-question-circle:before {
+  text-decoration: none;
+  margin-right: 3px;
+}
 .icon-bookmark:hover,
 .icon-bookmark {
   background-color: #fff;
