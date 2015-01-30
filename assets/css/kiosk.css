@@ -2,12 +2,21 @@
     and (min-device-width : 768px) 
     and (max-device-width : 1024px) {
 
+
+    body {
+      overflow: hidden;
+    }
+    
     /**** Modal Dialog ****/
     .modal-dialog {
-      margin-top: 35%;
+      margin-top: 18%;
     }
     #card-scan.popup {
       height: 300px;
+    }
+
+    .preview {
+      height: 380px !important;
     }
 }
 
