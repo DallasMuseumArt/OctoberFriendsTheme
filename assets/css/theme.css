@@ -500,3 +500,7 @@ span.form-control-feedback {
   font-size: 1.5em;
   padding: 20px 15px;
 }
+
+#user-profile {
+  margin-bottom: 150px;
+}

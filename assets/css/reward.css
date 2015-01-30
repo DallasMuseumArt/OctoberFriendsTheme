@@ -2,7 +2,7 @@
     background: #ebeae6;
     color: #8d7c75;
     margin-bottom: 20px;
-    height: 180px;
+    height: 180px !important;
     padding: 0;
 }
 
