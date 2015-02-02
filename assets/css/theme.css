@@ -214,6 +214,7 @@ h4.user-name {
     background: #febe10;
     padding: 10px;
     margin: 45px 0 20px 0;
+    font-size: 0.7em;
 }
 .dma-code-input #activity-code {
   width: 100%;
@@ -257,6 +258,7 @@ h4.user-name {
  */
 .primary-links {
   margin-bottom: 20px;
+  font-size: 0.7em;
 }
 
 .primary-links .item {
@@ -308,6 +310,7 @@ ul.nav.navbar-nav.left {
     color: #777;
     margin-bottom: 20px;
     background: #ebeae6;
+    font-size: 0.7em;
 }
 #layout-nav a:hover {
     color: #777;
@@ -390,7 +393,6 @@ ul.nav.navbar-nav.left {
   text-indent: 10px;
   margin: 0;
   line-height: 60px;
-  font-size: 1.5em;
 }
 .activity-stream .filter-buttons-wrap li a:before {
   margin-right: 10px;
@@ -520,7 +522,6 @@ span.form-control-feedback {
 }
 
 .list-group-item {
-  font-size: 1.5em;
   padding: 20px 15px;
 }
 

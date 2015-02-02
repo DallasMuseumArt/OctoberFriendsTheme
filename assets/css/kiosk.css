@@ -6,13 +6,13 @@
     body {
       overflow: hidden;
     }
-    
+
     /**** Modal Dialog ****/
     .modal-dialog {
-      margin-top: 18%;
+      margin-top: 13%;
     }
     #card-scan.popup {
-      height: 300px;
+      height: 340px;
     }
 
     .preview {
