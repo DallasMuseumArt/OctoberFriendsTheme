@@ -4,21 +4,13 @@ layout = "default"
 description = "User group creation"
 hidden = "0"
 
-[GroupFormCreation]
-maxUserSuggestions = "10"
-noUserRedirectTo = "/"
+[GroupManager]
 ==
-<div class="container">
-	<div class="row">
+<h2>Create a Group</h2>
 
-		<div class="col-md-3">
-			<p>Ut auctor tincidunt neque, vitae commodo diam feugiat sed. Nullam fringilla urna sit amet imperdiet auctor. Fusce sed auctor turpis.</p>
-			<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi diam nulla, faucibus vel lacinia non, tincidunt nec enim.</p>
-		</div>
-	
-		<div class="col-md-8">
-			<h4>Create a group</h4>
-			{% component 'GroupFormCreation' %}
-		</div>
-	</div>
-</div>
+<p class="lead">
+    You can use Groups to quickly earn and share points with all your friends or family members.<br/>
+</p>
+
+
+{% component 'GroupManager' %}
