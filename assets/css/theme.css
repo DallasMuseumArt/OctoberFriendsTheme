@@ -196,7 +196,7 @@ h4.user-name {
     padding: 5px;
     text-decoration: none;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 /* hide the iframe for iPad bar code scanner */
@@ -428,7 +428,7 @@ ul.nav.navbar-nav.left {
 
 .modal-title {
   color: #ec1c2e;
-  font-size: 3em !important;
+  font-size: 2em !important;
   margin-left: 15px;
   font-weight: normal !important;
 }
