@@ -17,7 +17,7 @@
 
 .friends-reward .image img {
     height: 180px;
-    width: auto;
+    width: 100%;
 }
 
 .friends-reward .description {
