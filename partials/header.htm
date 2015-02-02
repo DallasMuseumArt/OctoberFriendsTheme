@@ -80,8 +80,4 @@ cssClass = "nav-item notifications-feed icon-envelope"
     </header>
 
     <div id="flashMessages">
-        {% flashMessages %}
-            {% set class = ( type == 'error') ? 'danger' : type %}
-            <div class="alert alert-{{ class }}">{{ message }}</div>
-        {% endflashMessages %}
     </div>

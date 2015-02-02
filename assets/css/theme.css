@@ -513,6 +513,10 @@ ul.nav.navbar-nav.left {
 
 /***** Misc ******/
 
+.location-info h4:before {
+    margin-right: 5px;
+}
+
 .preview img {
     max-width: 100%;
 }
