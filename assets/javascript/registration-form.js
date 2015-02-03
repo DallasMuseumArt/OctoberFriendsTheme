@@ -89,7 +89,7 @@
             } else {
                 $('.registration-next').addClass('disabled');
             }
-        }, 1000);
+        }, 2000);
     
     }
 
