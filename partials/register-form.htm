@@ -34,7 +34,34 @@ You are signing up to become a DMA Friend. Once you complete the registration pr
             <div class="row">
                 <div class="form-group is-required col-md-6 col-sm-6">
                     <label>Date of Birth</label>
-                    <div id="DatePicker-birthdate" 
+                    <select name="birthday[month]" id="month">
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">Decemember</option>
+                    </select>
+
+                    <select name="birthday[day]" id="day">
+                        <?php for ($i = 1; $i <= 31; $i++) { ?>
+                            <option><?= $i ?></option>
+
+                        <?php } ?>
+                    </select>
+
+                    <select name="birthday[year]" id="year">
+                        <?php for ($i = 1900; $i <= 2015; $i++) { ?>
+                        <option><?= $i ?></option>
+                        <?php } ?>
+                    </select>
+<!--                     <div id="DatePicker-birthdate" 
                         class="field-datepicker" 
                         data-control="datepicker" 
                         data-min-date="1900-01-01" 
@@ -50,7 +77,7 @@ You are signing up to become a DMA Friend. Once you complete the registration pr
                         data-parsley-required="true"
                         data-parsley-group="block0"
                     >
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="form-group col-md-6 col-sm-6 is-required">
