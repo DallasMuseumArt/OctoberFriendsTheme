@@ -38,5 +38,9 @@
         $('#card-scan.popup').height('auto');
         $('<iframe>').attr('src', 'dma://hidescanner').appendTo(document.documentElement).remove();
     });
+
+    $('button.close').click(function(e) {
+        $('<iframe>').attr('src', 'dma://hidescanner').appendTo(document.documentElement).remove();
+    });
 })(jQuery);
 </script>
