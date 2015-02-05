@@ -51,7 +51,9 @@ cssClass = "nav-item notifications-feed icon-envelope"
     </head>
     <body class="{{ this.page.baseFileName }}"
         {% if location.image is not null %}
-        style="background-image: url('{{ location.image.getPath() }}');"
+        style="background-repeat: no-repeat;
+        background-size: 100%;
+        background-image: url('{{ location.image.getPath() }}');"
         {% endif %}
     >
 
