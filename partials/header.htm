@@ -49,7 +49,11 @@ cssClass = "nav-item notifications-feed icon-envelope"
             'assets/css/kiosk.css'
         ]|theme }}" rel="stylesheet">
     </head>
-    <body class="{{ this.page.baseFileName }}">
+    <body class="{{ this.page.baseFileName }}"
+        {% if location.image is not null %}
+        style="background-image: url('{{ location.image.getPath() }}');"
+        {% endif %}
+    >
 
     <!-- Header -->
     <header id="layout-header">

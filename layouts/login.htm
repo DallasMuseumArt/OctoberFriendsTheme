@@ -1,5 +1,12 @@
 description = "Login Screen layout"
 ==
+<?php
+function onStart()
+{    
+    $this['location'] = \DMA\Friends\Classes\LocationManager::getLocation();
+}
+?>
+==
 {% partial "header" %}
 
 <!-- Content -->
