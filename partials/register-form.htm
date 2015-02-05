@@ -57,7 +57,7 @@ You are signing up to become a DMA Friend. Once you complete the registration pr
                     </select>
 
                     <select name="birthday[year]" id="year">
-                        <?php for ($i = 1900; $i <= 2015; $i++) { ?>
+                        <?php for ($i = date('Y'); $i >= 1900; $i--) { ?>
                         <option><?= $i ?></option>
                         <?php } ?>
                     </select>
@@ -282,7 +282,7 @@ It is optional to provide demographic information.
 
     <div class="buttons">
         <a class="registration-prev btn btn-primary icon-arrow-left" href="#carousel-register" role="button" data-slide="prev">&nbsp;</a>
-        <a class="registration-next btn btn-primary disabled" href="#carousel-register" role="button" data-slide="next">Continue</a>
+        <a class="registration-next btn btn-primary" href="#carousel-register" role="button" data-slide="next">Continue</a>
      
         <button type="submit" data-request="onRegisterSubmit" class="register btn btn-primary">Accept Terms and Conditions</button>
         <button type="button" class="btn btn-default" data-dismiss="popup">Cancel</button>
