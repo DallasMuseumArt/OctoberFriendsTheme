@@ -88,6 +88,9 @@ label {
   font-weight: normal;
   text-transform: uppercase;
 }
+.form-group {
+  padding-bottom: 0 !important;
+}
 .form-group.is-required > label:after {
   margin-left: 5px;
 }
@@ -531,4 +534,8 @@ span.form-control-feedback {
 
 #user-profile {
   margin-bottom: 150px;
+}
+
+.small {
+  font-size: 0.5em;
 }
