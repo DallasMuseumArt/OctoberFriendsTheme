@@ -6,7 +6,7 @@
         <div class="item active">
             <h3>Basic Info</h3>
 <p>
-You are signing up to become a DMA Friend. Once you complete the registration process, you will be ready to check out new badges and activities that are waiting for you. As you participate, you’ll earn credit you can use to pick from a number of fun rewards.
+You are signing up to become a DMA Friend. Once you complete the registration process, you will be ready to check out new badges and activities that are waiting for you. As you participate, you&#x2019;ll earn credit you can use to pick from a number of fun rewards.
 </p>
             <div class="form-group is-required">
                 <label>First Name</label>
@@ -121,6 +121,11 @@ We will use your e-mail address consistent with the privacy policy to send you m
                     data-parsley-required="true"
                     data-parsley-type="email"
                     data-parsley-group="block1"
+                    data-parsley-remote
+                    data-parsley-remote-validator="validateUsername"
+                    data-parsley-trigger="change focusout"
+                    data-parsley-remote-message="A user with this email address already exists."
+                    data-parsley-remote-options='{ "type": "POST", "dataType": "json", "headers": {	"X-OCTOBER-REQUEST-HANDLER": "onAvailableUser", "X-OCTOBER-REQUEST-PARTIALS":"" }}'
                     />
             </div>
 

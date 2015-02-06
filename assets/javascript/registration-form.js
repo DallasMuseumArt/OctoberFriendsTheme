@@ -17,7 +17,17 @@
 
     $('.registration-next').click(function(e) {
         var idx = $('.item.active').index();
-        return $('#register').parsley().validate('block' + idx);
+        $('#register').parsley()
+        	.asyncValidate('block' + idx)
+            .done(function() {
+            	// Group validation was successful
+            	$('#carousel-register').carousel('next');
+             });
+        
+        //Stop button of triggeting next slice in the carousel
+        e.preventDefault();
+        e.stopPropagation();
+	
     })
 
     function checkButtons(obj) {
@@ -48,5 +58,13 @@
         }
     });
 
+    // Custom Parsley validator
+    ParsleyExtend.addAsyncValidator('validateUsername', function (xhr) {
+    	// Ideally the validation should be base on HTTP codes 200 and 404
+    	// But OctoberCMS framework always return 200. Throwing exceptions generated
+    	// a HTTP code 500 and during my test this causes a strange behaivor in parsley  
+    	return xhr.responseJSON['available'];
+    }); 
+      
 
 })(jQuery);
