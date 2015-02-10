@@ -8,7 +8,7 @@
     }
 
     /**** Modal Dialog ****/
-    .modal-dialog {
+    .login .modal-dialog {
       margin-top: 13%;
     }
     #card-scan.popup {
