@@ -464,6 +464,16 @@ ul.nav.navbar-nav.left {
   padding: 10px;
 }
 
+.registration-step {
+  float: right;
+  font-size: 0.7em;
+}
+
+.item-6 .registration-step,
+.item-5 .registration-step {
+  width: 100%;
+  text-align: right;
+}
 #register .buttons .registration-prev {
   width: 35px;
 }

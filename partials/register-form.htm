@@ -3,7 +3,8 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <!-- Slide 1 -->
-        <div class="item active">
+        <div class="item item-1 active">
+            <div class="registration-step">Step 1 of 6</div>
             <h3>Basic Info</h3>
 <p>
 You are signing up to become a DMA Friend. Once you complete the registration process, you will be ready to check out new badges and activities that are waiting for you. As you participate, you&#x2019;ll earn credit you can use to pick from a number of fun rewards.
@@ -96,7 +97,8 @@ You are signing up to become a DMA Friend. Once you complete the registration pr
         </div>
 
         <!-- Slide 2 -->
-        <div class="item">
+        <div class="item item-2">
+            <div class="registration-step">Step 2 of 6</div>
             <h3>Account information</h3>
             <p>
 We will use your e-mail address consistent with the privacy policy to send you messages concerning your Friends membership.
@@ -138,7 +140,8 @@ We will use your e-mail address consistent with the privacy policy to send you m
         </div>
 
         <!-- Slide 3 -->
-        <div class="item">
+        <div class="item item-3">
+            <div class="registration-step">Step 3 of 6</div>
             <h3>Create a Password</h3>
             <p>
 Your password is used for security and verification purposes. Your password is private, so please keep it safe!
@@ -171,7 +174,8 @@ Your password is used for security and verification purposes. Your password is p
         </div>
 
         <!-- Slide 4 -->
-        <div class="item">
+        <div class="item item-4">
+            <div class="registration-step">Step 4 of 6</div>
             <h3>Contact Info</h3>
 Sharing your mobile number with DMA Friends is optional but enables you to use Friends in new ways. By entering your phone number here, you agree to allow us to text message you occasionally about your friends membership and your activities.
             <div class="form-group">
@@ -205,7 +209,8 @@ Sharing your mobile number with DMA Friends is optional but enables you to use F
         </div>
 
         <!-- Slide 5 -->
-        <div class="item">
+        <div class="item item-5">
+            <div class="registration-step">Step 5 of 6</div>
             <?= $this->getAvatars() ?>
             <div class="is-required">
                 <input type="hidden" 
@@ -217,6 +222,7 @@ Sharing your mobile number with DMA Friends is optional but enables you to use F
         </div>
 
         <!-- Slide 6 -->
+<!-- UNCOMMENT TO ENABLE DEMOGRAPHIC INFORMATION IN REGISTRATION FORM
         <div class="item">
             <h3>Demographic Information</h3>
 <span class="small">
@@ -272,10 +278,11 @@ Answering questions about your demographic background is optional. The DMA wants
                 </select>
             </div>
 
-        </div>
+        </div> -->
 
-        <!-- Slide 7 -->
-        <div class="item">
+        <!-- Slide 6 -->
+        <div class="item item-6">
+            <div class="registration-step">Step 6 of 6</div>
             <div class="terms">
             <?php $controller = new Cms\Controllers\Themes();
                 print $controller->makePartial('@/themes/friends/partials/terms-and-conditions.htm'); 
