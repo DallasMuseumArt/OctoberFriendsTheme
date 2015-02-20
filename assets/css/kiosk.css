@@ -3,7 +3,7 @@
     and (max-device-width : 1024px) {
 
 
-    html, body {
+    body.login {
       overflow: hidden;
     }
 
