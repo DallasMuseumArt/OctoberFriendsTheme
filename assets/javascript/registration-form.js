@@ -40,7 +40,7 @@
             $('.registration-prev').hide();
         }
 
-        if (idx == 6) {
+        if (idx == 5) {
             $('.registration-next').hide();
             $('.register').show();
         } else {

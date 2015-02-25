@@ -62,3 +62,7 @@
     font-size: 1.2em;
     margin-bottom: 20px;
 }
+.preview .special.limited {
+    left: -30px;
+    top: 20px;
+}
