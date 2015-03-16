@@ -409,17 +409,26 @@ ul.nav.navbar-nav.left {
     text-align: center;
 }
 
-/**
- * Ajax indicator
- */
-.stripe-loading-indicator {
-  height: 10px !important;
+#preloader {   
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#fff;
+  z-index:999; 
+  position:fixed;
 }
-.stripe-loading-indicator .stripe,
-.stripe-loading-indicator .stripe-loaded {
-  height: 10px!important;
-  background: @base-brand-color !important;
 
+#status {
+  background-image:url('../images/loading.gif');
+  width:200px;
+  height:200px;
+  position:absolute;
+  left:50%; 
+  top:50%; 
+  background-repeat:no-repeat;
+  background-position:center;
+  margin:-100px 0 0 -100px;
 }
 
 .activity-stream .time-ago {
