@@ -18,7 +18,7 @@
             $('#preloader').fadeIn('slow');
         });
 
-        $('.primary-links a').click(function() {
+        $('#layout-nav a, .primary-links a').click(function() {
             $('#status').fadeIn();
             $('#preloader').fadeIn('slow');            
         });
