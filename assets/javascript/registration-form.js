@@ -15,19 +15,12 @@
 
     });
 
+    $('input').on('blur', function(e) {
+        validateForm(e);	
+    });
+
     $('.registration-next').click(function(e) {
-        var idx = $('.item.active').index();
-        $('#register').parsley()
-        	.asyncValidate('block' + idx)
-            .done(function() {
-            	// Group validation was successful
-            	$('#carousel-register').carousel('next');
-             });
-        
-        //Stop button of triggeting next slice in the carousel
-        e.preventDefault();
-        e.stopPropagation();
-	
+        validateForm(e);	
     });
 
     // Disable continue button on click
@@ -38,7 +31,22 @@
         $('.registration-next').removeAttr('disabled');
     });
 
+    function validateForm(e) {
+        var idx = $('.item.active').index();
+        $('#register').parsley()
+            .asyncValidate('block' + idx)
+            .done(function() {
+                // Group validation was successful
+                $('#carousel-register').carousel('next');
+             }); 
+                 
+        //Stop button of triggeting next slice in the carousel
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
     function checkButtons(obj) {
+        $('.registration-next').removeAttr('disabled');
 
         var idx = $('.item.active').index();
 
@@ -63,6 +71,7 @@
         selected: function( event, ui ) {
             var fileName = $(ui.selected).find('img').attr('src');
             $('#avatar').val(fileName);
+            $('.registration-next').removeAttr('disabled');
         }
     });
 
