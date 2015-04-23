@@ -7,6 +7,8 @@
       overflow: hidden;
     }
 
+    #status { display: none; opacity: 0;}
+
     /**** Modal Dialog ****/
     .login .modal-dialog {
       margin-top: 13%;
@@ -16,7 +18,7 @@
     }
 
     .preview {
-      height: 380px !important;
+      height: 450px !important;
     }
 }
 
