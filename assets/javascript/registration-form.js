@@ -28,7 +28,15 @@
         e.preventDefault();
         e.stopPropagation();
 	
-    })
+    });
+
+    // Disable continue button on click
+    $('.registration-next').click(function() {
+        $(this).attr('disabled', 'disabled');
+    });
+    $('form').on('keyup', function() {
+        $('.registration-next').removeAttr('disabled');
+    });
 
     function checkButtons(obj) {
 
