@@ -12,7 +12,6 @@
 
     $('#carousel-register').on('slid.bs.carousel', function(e) {
         checkButtons($('#carousel-register .item.active'));
-
     });
 
     $('input').on('blur', function(e) {
@@ -27,6 +26,13 @@
     $('.registration-next').click(function() {
         $(this).attr('disabled', 'disabled');
     });
+
+    $('.register').click(function() {
+        $('#status').fadeIn();
+        $('#preloader').fadeIn('slow');
+    });
+        
+
     $('form').on('keyup', function() {
         $('.registration-next').removeAttr('disabled');
     });
