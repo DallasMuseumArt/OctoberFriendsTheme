@@ -51,16 +51,15 @@ You are signing up to become a DMA Friend. Once you complete the registration pr
                     </select>
 
                     <select name="birthday[day]" id="day">
-                        <?php for ($i = 1; $i <= 31; $i++) { ?>
-                            <option><?= $i ?></option>
-
-                        <?php } ?>
+                        {% for i in 1..31 %}
+                            <option>{{ i }}</option>
+                        {% endfor %}
                     </select>
 
                     <select name="birthday[year]" id="year">
-                        <?php for ($i = date('Y'); $i >= 1900; $i--) { ?>
-                        <option><?= $i ?></option>
-                        <?php } ?>
+                        {% for i in 2015..1900 %}
+                        <option>{{ i }}</option>
+                        {% endfor %}
                     </select>
 <!--                     <div id="DatePicker-birthdate" 
                         class="field-datepicker" 
@@ -198,11 +197,11 @@ Sharing your mobile number with DMA Friends is optional but enables you to use F
                 <div class="form-group col-md-6 col-sm-6">
                     <label>State</label>
                     <select name="state" class="form-control">
-                    <?php foreach($options['states'] as $state) { ?>
-                        <option value="<?= $state->id ?>" 
-                            <?php if (\DMA\Friends\Models\Settings::get('default_state') == $state->id) echo 'selected="selected"'; ?>
-                        ><?= $state->name ?></option>
-                    <?php } ?>
+                        <option value="">- Choose a state -</option>
+                    {% for state in options['states'] %}
+                        <option value="{{ state.id }}">{{ state.name }}</option>
+                    {% endfor %}
+
                     </select>
                 </div>
             </div>
@@ -211,7 +210,7 @@ Sharing your mobile number with DMA Friends is optional but enables you to use F
         <!-- Slide 5 -->
         <div class="item item-5">
             <div class="registration-step">Step 5 of 6</div>
-            <?= $this->getAvatars() ?>
+            {{ avatars|raw }}
             <div class="is-required">
                 <input type="hidden" 
                     name="avatar" 
@@ -284,9 +283,7 @@ Answering questions about your demographic background is optional. The DMA wants
         <div class="item item-6">
             <div class="registration-step">Step 6 of 6</div>
             <div class="terms">
-            <?php $controller = new Cms\Controllers\Themes();
-                print $controller->makePartial('@/themes/friends/partials/terms-and-conditions.htm'); 
-            ?>
+                {{ terms|raw }}
             </div>
         </div>
 
