@@ -8,14 +8,8 @@
         wrap: false
     });
 
-    checkButtons($('#carousel-register .item.active'));
-
     $('#carousel-register').on('slid.bs.carousel', function(e) {
         checkButtons($('#carousel-register .item.active'));
-    });
-
-    $('input').on('blur', function(e) {
-        validateForm(e);	
     });
 
     $('.registration-next').click(function(e) {
@@ -31,10 +25,13 @@
         $('#status').fadeIn();
         $('#preloader').fadeIn('slow');
     });
-        
 
     $('form').on('keyup', function() {
         $('.registration-next').removeAttr('disabled');
+    });
+
+    $(document).on('touchend', 'form button', function (e) {
+        validateForm(e);
     });
 
     function validateForm(e) {
@@ -44,11 +41,8 @@
             .done(function() {
                 // Group validation was successful
                 $('#carousel-register').carousel('next');
-             }); 
-                 
-        //Stop button of triggeting next slice in the carousel
-        e.preventDefault();
-        e.stopPropagation();
+            }); 
+        $(this).attr('disabled', 'disabled');
     }
 
     function checkButtons(obj) {

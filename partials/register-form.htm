@@ -7,7 +7,7 @@
             <div class="registration-step">Step 1 of 6</div>
             <h3>Basic Info</h3>
 <p>
-You are signing up to become a DMA Friend. Once you complete the registration process, you will be ready to check out new badges and activities that are waiting for you. As you participate, you&#x2019;ll earn credit you can use to pick from a number of fun rewards.
+You are signing up to become a DMA Friend. Once you complete the registration process, you will be ready to check out new badges and activities that are waiting for you. As you participate, you'll earn credit you can use to pick from a number of fun rewards.
 </p>
             <div class="form-group is-required">
                 <label>First Name</label>
@@ -33,9 +33,9 @@ You are signing up to become a DMA Friend. Once you complete the registration pr
             </div>
 
             <div class="row">
-                <div class="form-group is-required birthdate col-md-6 col-sm-6">
-                    <label>Date of Birth</label>
-                    <select name="birthday[month]" id="month">
+                <div class="form-group is-required birthdate col-md-12 col-sm-12">
+                    <label>Date of Birth</label><br/>
+                    <select name="birthday[month]" id="month" class="col-md-3 col-sm-3">
                         <option value="1">January</option>
                         <option value="2">February</option>
                         <option value="3">March</option>
@@ -50,13 +50,13 @@ You are signing up to become a DMA Friend. Once you complete the registration pr
                         <option value="12">Decemember</option>
                     </select>
 
-                    <select name="birthday[day]" id="day">
+                    <select name="birthday[day]" id="day" class="col-md-3 col-sm-3">
                         {% for i in 1..31 %}
                             <option>{{ i }}</option>
                         {% endfor %}
                     </select>
 
-                    <select name="birthday[year]" id="year">
+                    <select name="birthday[year]" id="year" class="col-md-3 col-sm-3">
                         {% for i in 2015..1900 %}
                         <option>{{ i }}</option>
                         {% endfor %}
@@ -292,11 +292,39 @@ Answering questions about your demographic background is optional. The DMA wants
     </div>
 
     <div class="buttons">
-        <button class="registration-prev btn btn-primary icon-arrow-left" href="#carousel-register" role="button" data-slide="prev">&nbsp;</a>
-        <button class="registration-next btn btn-primary" href="#carousel-register" role="button" data-slide="next">Continue</a>
+        <button tabindex="3" 
+            class="registration-prev btn btn-primary icon-arrow-left" 
+            href="#carousel-register" 
+            role="button" 
+            data-slide="prev"
+        >
+                &nbsp;
+        </button>
+        <button 
+            tabindex="1" 
+            class="registration-next btn btn-primary" 
+            href="#carousel-register" 
+            role="button" 
+            data-slide="next"
+        >
+            Continue
+        </button>
      
-        <button type="submit" data-request="onRegisterSubmit" class="register btn btn-primary">Accept Terms and Conditions</button>
-        <button type="button" class="btn btn-default" data-dismiss="popup">Cancel</button>
+        <button 
+            tabindex="2" 
+            type="submit" 
+            data-request="onRegisterSubmit" 
+            class="register btn btn-primary"
+        >
+            Accept Terms and Conditions
+        </button>
+        <button 
+            type="button" 
+            class="btn btn-default" 
+            data-dismiss="popup"
+        >
+            Cancel
+        </button>
     </div>
 </form>
 
