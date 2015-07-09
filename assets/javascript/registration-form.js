@@ -31,7 +31,7 @@
     });
 
     $(document).on('touchend', 'form button', function (e) {
-        validateForm(e);
+        $(e.target).click();
     });
 
     function validateForm(e) {
