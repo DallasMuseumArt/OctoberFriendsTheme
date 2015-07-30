@@ -32,7 +32,9 @@ function onStart()
         <div class="info">{% component 'UserLogin' %}</div
     </div>
 
+    {% if location.title is defined %}
     <div class="location-info footer">
         <h4 class="icon-map-marker">{{ location.title }}</h4>
     </div>
+    {% endif %}
 </div>
