@@ -34,23 +34,25 @@ function onStart()
 
         <div class="info">{% component 'UserLogin' %}</div>
 
+        {% if location.title is not defined %}
         <div class="col-md-12 col-sm-12">
         <a class="forgot-password" href="#">
             <span class="icon-question-circle"></span>I forgot my password.
         </a>
         </div>
+        {% endif %}
 
         <div class="col-md-12 col-sm-12">
         {% component 'resetPassword' %}
         </div>
 
+        {% if location.title is defined %}
+        <div class="col-md-12 col-sm-12 location-info footer">
+            <h4 class="icon-map-marker">{{ location.title }}</h4>
+        </div>
+        {% endif %}
+
         <div class="clearfix"></div>
     </div>
 
-    {% if location.title is defined %}
-    <div class="location-info footer">
-        <h4 class="icon-map-marker">{{ location.title }}</h4>
-    </div>
-
-    {% endif %}
 </div>
