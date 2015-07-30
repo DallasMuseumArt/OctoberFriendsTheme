@@ -22,6 +22,10 @@
             $('#status').fadeIn();
             $('#preloader').fadeIn('slow');            
         });
+
+        $('.login-box .forgot-password').click(function() {
+            $('#partialUserResetForm').toggle();
+        });
     });
 
 })(jQuery);

@@ -1,16 +1,19 @@
 title = "Login to Friends"
 url = "/"
 layout = "login"
-hidden = "0"
+is_hidden = "0"
 
 [Modal WhatsThisModal]
-linkTitle = "<span class="icon-question-circle">What is this?</span>"
+linkTitle = "<span class=icon-question-circle>What is this?</span>"
 linkClasses = "help small pop"
 title = "What is DMA Friends?"
 partial = "whatisthis"
 
 [UserLogin]
 redirect = "friends"
+
+[resetPassword]
+paramCode = "code"
 ==
 <?php
 use DMA\Friends\Classes\LocationManager;
@@ -29,12 +32,25 @@ function onStart()
     <div class="login-box">
         <div class="dma-logo">{% component 'WhatsThisModal' %}</div>
 
-        <div class="info">{% component 'UserLogin' %}</div
+        <div class="info">{% component 'UserLogin' %}</div>
+
+        <div class="col-md-12 col-sm-12">
+        <a class="forgot-password" href="#">
+            <span class="icon-question-circle"></span>I forgot my password.
+        </a>
+        </div>
+
+        <div class="col-md-12 col-sm-12">
+        {% component 'resetPassword' %}
+        </div>
+
+        <div class="clearfix"></div>
     </div>
 
     {% if location.title is defined %}
     <div class="location-info footer">
         <h4 class="icon-map-marker">{{ location.title }}</h4>
     </div>
+
     {% endif %}
 </div>
