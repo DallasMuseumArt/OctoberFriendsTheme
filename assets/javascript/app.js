@@ -26,6 +26,11 @@
         $('.login-box .forgot-password').click(function() {
             $('#partialUserResetForm').toggle();
         });
+
+        // Addresses a bug when touching a button when the keyboard is open
+        $(document).on('touchend', 'form button', function (e) {
+            $(e.target).click();
+        });
     });
 
 })(jQuery);
