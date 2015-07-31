@@ -30,10 +30,6 @@
         $('.registration-next').removeAttr('disabled');
     });
 
-    $(document).on('touchend', 'form button', function (e) {
-        $(e.target).click();
-    });
-
     function validateForm(e) {
         var idx = $('.item.active').index();
         $('#register').parsley()
