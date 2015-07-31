@@ -17,8 +17,8 @@
     </div>
 
 	<div class="btn-toolbar">
-		<a class="pull-left" href="#" data-dismiss="popup" data-control="popup" data-handler="onForgotPassword">
-			<span class="icon-question-circle"></span>I forgot my password.</a>
+		<a class="pull-left help small pop" href="#" data-dismiss="popup" data-control="popup" data-handler="onForgotPassword">
+			<span class="icon-question-circle">I forgot my password.</span></a>
 			
 		<div class="pull-right">
 	    	<button type="submit" data-request="onUserLogin" data-hotkey="ctrl+enter, cmd+enter, enter" class="btn btn-danger">Login</button>
@@ -28,7 +28,7 @@
 </form>
 
 {% if enableAction %}
-<a class="help pop manual-login" href="#"><span class="icon-question-circle"></span>I don't have my card.</a>
+<a class="small help pop manual-login" href="#"><span class="icon-question-circle">I don't have my card.</span></a>
 {% endif %}
 
 <script type="text/javascript">
