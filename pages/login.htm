@@ -34,7 +34,7 @@ function onStart()
 
         <div class="info">{% component 'UserLogin' %}</div>
 
-        {% if location.title is not defined %}
+        {% if not location %}
         <div class="col-md-12 col-sm-12">
         <a class="forgot-password" href="#">
             <span class="icon-question-circle"></span>I forgot my password.
