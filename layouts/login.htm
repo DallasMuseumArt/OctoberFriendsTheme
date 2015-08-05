@@ -14,4 +14,10 @@ function onStart()
     {% page %}
 </section>
 
+<script type="text/javascript">
+document.ontouchmove = function(event){
+    event.preventDefault();
+}
+</script>
+
 {% partial "footer" %}
