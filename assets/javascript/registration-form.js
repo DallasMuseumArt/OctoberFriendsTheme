@@ -1,7 +1,7 @@
 (function($) {
 
     /** Carousel **/
-    $('.registration-prev, .register').hide();
+    $('.registration-prev, .registration-next, .register').hide();
 
     $('#carousel-register').carousel({
         interval: false,
@@ -12,10 +12,21 @@
         checkButtons($('#carousel-register .item.active'));
     });
 
+    $('.login-box .member').click(function(e) {
+        e.preventDefault();
+        window.location = '/verify-membership';
+    });
+
+    $('.login-box .non-member').click(function(e) {
+        e.preventDefault();
+        $('#carousel-register').carousel('next');
+        
+    });
+
     $('.registration-next').click(function(e) {
         $("html, body").animate({
             scrollTop:0
-        },"slow");
+        },"fast");
         validateForm(e);	
     });
 
@@ -35,8 +46,9 @@
 
     function validateForm(e) {
         var idx = $('.item.active').index();
+
         $('#register').parsley()
-            .asyncValidate('block' + idx)
+            .asyncValidate('block' + (idx - 1))
             .done(function() {
                 // Group validation was successful
                 $('#carousel-register').carousel('next');
@@ -49,18 +61,18 @@
 
         var idx = $('.item.active').index();
 
-        if (idx > 0) {
+        if (idx > 0 && idx != 6) {
             $('.registration-prev').show();
-        } else {
-            $('.registration-prev').hide();
-        }
-
-        if (idx == 5) {
+            $('.registration-next').show();
+        } else if (idx == 6) {
+            $('.registration-prev').show();
             $('.registration-next').hide();
             $('.register').show();
         } else {
+            $('.registration-prev').hide();
+            $('.registration-next').hide();
             $('.register').hide();
-            $('.registration-next').show();
+            $('.cancel').show();
         }
     
     }

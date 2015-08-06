@@ -2,8 +2,20 @@
     <div id="carousel-register" class="registration-carousel carousel slide" data-ride="carousel">
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
+        <div class="item item-0 active col-lg-12">
+            <div class="login-box">                    
+                <div class="col-md-6 col-sm-6">
+                    <button type="submit" class="member button btn alternate">Members</button>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <button type="submit" class="non-member button btn alternate">Non-Members</button>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Slide 1 -->
-        <div class="item item-1 active">
+        <div class="item item-1">
             <div class="registration-step">Step 1 of 6</div>
             <h3>Basic Info</h3>
 <p>
@@ -102,17 +114,7 @@ You are signing up to become a DMA Friend. Once you complete the registration pr
             <p>
 We will use your e-mail address consistent with the privacy policy to send you messages concerning your Friends membership.
             </p>
-<!--             <div class="form-group is-required">
-                <label>Username</label>
-                <input type="text" 
-                    id="name" 
-                    name="username" 
-                    class="form-control"
-                    data-parsley-required="true"
-                    data-parsley-minlength="6"
-                    data-parsley-group="block1"
-                />
-            </div> -->
+
             <div class="form-group is-required">
                 <label>Email</label>
                 <input type="email" 
@@ -319,13 +321,6 @@ Answering questions about your demographic background is optional. The DMA wants
             class="register btn btn-primary"
         >
             Accept Terms and Conditions
-        </button>
-        <button 
-            type="button" 
-            class="btn btn-default" 
-            data-dismiss="popup"
-        >
-            Cancel
         </button>
     </div>
 </form>
