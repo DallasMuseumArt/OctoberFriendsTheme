@@ -42,6 +42,7 @@
                 $('#carousel-register').carousel('next');
             }); 
         $(this).attr('disabled', 'disabled');
+        $('input').blur();
     }
 
     function checkButtons(obj) {
