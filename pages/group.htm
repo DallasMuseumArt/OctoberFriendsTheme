@@ -2,15 +2,28 @@ title = "Group"
 url = "/group"
 layout = "default"
 description = "User group creation"
-hidden = "0"
+is_hidden = "0"
 
 [GroupManager]
+autoAcceptNewUsers = "1"
+
+[GroupJoinCodeForm]
+showMemberOf = "1"
 ==
+<div class="row">
 <h2>Create a Group</h2>
 
 <p class="lead">
     You can use Groups to quickly earn and share points with all your friends or family members.<br/>
 </p>
-
-
 {% component 'GroupManager' %}
+</div>
+
+<div class="row">
+<h2>Join to a Group</h2>
+<p class="lead">
+    Join other groups to earn points<br/>
+</p>
+
+{% component 'GroupJoinCodeForm' %}
+</div>
